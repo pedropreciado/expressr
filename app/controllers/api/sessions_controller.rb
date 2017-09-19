@@ -15,7 +15,7 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       login(@user)
-      # TODO: render
+      render "/api/users"
     else
       flash[:errors] = @user.errors.full_messages
       # TODO: render

@@ -6,16 +6,16 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      # TODO: render
+      render :show
     else
-      flash[:errors] = @user.errors.full_messages
-      # TODO: render
+      render json: @user.errors.full_messages, status: 422
     end
   end
 

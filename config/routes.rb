@@ -4,8 +4,9 @@ Rails.application.routes.draw do
       resource :session, only: [:create, :destroy]
       resources :posts, only: [:index, :create, :update, :destroy]
       resources :users do
-        resources 
+        resources :followers, only: [:index, :create, :destroy]
       end
+      resources :likes, only: [:create, :destroy]
 
   end
 
