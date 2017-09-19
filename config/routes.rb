@@ -1,4 +1,144 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'likes/new'
+  end
+
+  namespace :api do
+    get 'likes/index'
+  end
+
+  namespace :api do
+    get 'likes/show'
+  end
+
+  namespace :api do
+    get 'likes/create'
+  end
+
+  namespace :api do
+    get 'likes/edit'
+  end
+
+  namespace :api do
+    get 'likes/update'
+  end
+
+  namespace :api do
+    get 'likes/destroy'
+  end
+
+  namespace :api do
+    get 'posts/new'
+  end
+
+  namespace :api do
+    get 'posts/index'
+  end
+
+  namespace :api do
+    get 'posts/show'
+  end
+
+  namespace :api do
+    get 'posts/create'
+  end
+
+  namespace :api do
+    get 'posts/edit'
+  end
+
+  namespace :api do
+    get 'posts/update'
+  end
+
+  namespace :api do
+    get 'posts/destroy'
+  end
+
+  namespace :api do
+    get 'users/new'
+  end
+
+  namespace :api do
+    get 'users/index'
+  end
+
+  namespace :api do
+    get 'users/show'
+  end
+
+  namespace :api do
+    get 'users/create'
+  end
+
+  namespace :api do
+    get 'users/edit'
+  end
+
+  namespace :api do
+    get 'users/update'
+  end
+
+  namespace :api do
+    get 'users/destroy'
+  end
+
+  namespace :api do
+    get 'sessions/new'
+  end
+
+  namespace :api do
+    get 'sessions/index'
+  end
+
+  namespace :api do
+    get 'sessions/show'
+  end
+
+  namespace :api do
+    get 'sessions/create'
+  end
+
+  namespace :api do
+    get 'sessions/edit'
+  end
+
+  namespace :api do
+    get 'sessions/update'
+  end
+
+  namespace :api do
+    get 'sessions/destroy'
+  end
+
+  namespace :api do
+    get 'session/new'
+  end
+
+  namespace :api do
+    get 'session/index'
+  end
+
+  namespace :api do
+    get 'session/show'
+  end
+
+  namespace :api do
+    get 'session/create'
+  end
+
+  namespace :api do
+    get 'session/edit'
+  end
+
+  namespace :api do
+    get 'session/update'
+  end
+
+  namespace :api do
+    get 'session/destroy'
+  end
+
   get 'sessions/new'
 
   get 'sessions/index'
