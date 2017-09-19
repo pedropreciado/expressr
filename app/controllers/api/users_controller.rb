@@ -9,6 +9,14 @@ class Api::UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      login(@user)
+      # TODO: render
+    else
+      flash[:errors] = @user.errors.full_messages
+      # TODO: render
+    end
   end
 
   def edit
@@ -18,5 +26,9 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :password, :email, :img_url)
   end
 end
