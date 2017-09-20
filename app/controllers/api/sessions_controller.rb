@@ -15,10 +15,9 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       login(@user)
-      render "/api/users"
+      render "/api/users/"
     else
-      flash[:errors] = @user.errors.full_messages
-      # TODO: render
+      render json: ["Invalid username/password combination"], status: 401
     end
   end
 
@@ -29,7 +28,12 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout
-    # TODO: render
+    @user = current_user
+    if @user
+      logout
+      render 'api/users/show'
+    else
+      render json: ["No user"], status: 404
+    end
   end
 end
