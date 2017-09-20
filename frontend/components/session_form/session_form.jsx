@@ -22,19 +22,30 @@ class SessionForm extends React.Component {
     this.props.action(this.state);
   }
 
-  navLinks() {
-    if (this.props.formType == "login") {
-      return <Link to="/signup">sign up</ Link>
-    } else {
-      return <Link to="/login">log in</ Link >
-    }
+  // navLinks() {
+  //   if (this.props.formType == "login") {
+  //     return <Link to="/signup">sign up</ Link>
+  //   } else {
+  //     return <Link to="/login">log in</ Link >
+  //   }
+  // }
+  //
+  errors() {
+    return (
+      <ul>
+        {
+          this.props.errors.map((errors) => (
+            <li>{error}</li>
+          ))
+        }
+        </ ul>
+    )
   }
 
-  username_field() {
+  email_field() {
     if (this.props.formType == "signup") {
       return <label>
-              email:
-                <input type="text" value={this.state.email} onChange={this.update("email")} />
+                <input type="text" value="email" onChange={this.update("email")} />
               </label>
     }
   }
@@ -42,21 +53,20 @@ class SessionForm extends React.Component {
   render() {
 
     return (
-      <div>
-        <h1>{this.props.formType} Page</h1>
+      <div className="auth-page">
         <form onSubmit={this.handleSubmit}>
-          {this.navLinks()}
-          <br />
-          {this.username_field()}
-          <br />
+          <h2>expressr</h2>
+          <h3>{this.props.formType}</h3>
+
+          {this.errors()}
+
+          {this.email_field()}
           <label>
-            username:
-            <input type="text" value={this.state.username} onChange={this.update("username")} />
+            <input type="text" value="username" onChange={this.update("username")} />
           </ label>
-            <br />
+
             <label>
-              password:
-            <input type="text" value={this.state.password} onChange={this.update("password")} />
+            <input type="text" value="password" onChange={this.update("password")} />
             </ label>
 
             <div>

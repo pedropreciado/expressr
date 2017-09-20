@@ -1,6 +1,11 @@
+<head>
 <script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%=  render("api/users/user.json.jbuilder", user: current_user).html_safe%>
   <% end %>
 </script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200 " rel="stylesheet">
+</head>
+
 <main id="root">wut.</main>
