@@ -1,4 +1,11 @@
 {
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  },
   "name": "expressr",
   "private": true,
   "dependencies": {
@@ -6,6 +13,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "jquery-ujs": "^1.2.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",

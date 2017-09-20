@@ -17,8 +17,10 @@
 /yarn-error.log
 
 .byebug_history
-bundle.js
+bundle.js*
 bundle.js.map
 .byebug_history
 .DS_Store
 npm-debug.log
+node_modules
+

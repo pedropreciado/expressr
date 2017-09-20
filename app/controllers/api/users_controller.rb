@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def create
@@ -29,6 +29,7 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :img_url)
+    p params
+    params.require(:user).permit(:username, :email, :password)
   end
 end
