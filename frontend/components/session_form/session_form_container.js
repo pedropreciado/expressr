@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, { location }) => {
 
   const formType = location.pathname.slice(1);
+  console.log(formType);
   const action = (formType === 'login') ? login : signup;
   return {
     action: (user) => dispatch(action(user)),

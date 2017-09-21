@@ -12,16 +12,17 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.author_id = current_user.id
-    if @post.save
-      # TODO: render:
-    else
-      flash[:errors] = @post.errors.full_messages
+      @post = Post.new(post_params)
+      @post.author_id = current_user.id
+      if @post.save
+        # TODO: render:
+      else
+        flash[:errors] = @post.errors.full_messages
     end
   end
 
   def edit
+    render :edit
   end
 
   def update

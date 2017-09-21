@@ -18,8 +18,9 @@ const App = () => (
       <NavBarContainer />
     </header>
     <Switch>
-      <AuthRoute path="/login" component={SessionFormContainer} />
+      <Redirect to="/login" />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
     </ Switch>
     <Footer />
   </div>
