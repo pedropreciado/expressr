@@ -51,6 +51,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+li.errors {
+  list-style: none;
+  text-align: center;
+  position: relative;
+}
+
 footer {
   display: flex;
   justify-content: space-between;

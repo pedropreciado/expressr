@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.logout = ApiUtil.logout;
   window.getState = store.getState;
+  window.dispatch = store.dispatch;
 
 
   const root = document.getElementById("root");
