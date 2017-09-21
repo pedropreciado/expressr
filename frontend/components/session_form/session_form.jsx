@@ -69,12 +69,13 @@ class SessionForm extends React.Component {
     }
   }
 
+
   render() {
 
     return (
       <div className="auth-page">
         <form onSubmit={this.handleSubmit}>
-          <h1 id="form-title">expressr</h1>
+          <h1 id="form-title">expressr.</h1>
           <h3>{this.props.formType}</h3>
 
           {this.errors()}

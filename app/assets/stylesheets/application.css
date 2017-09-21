@@ -40,6 +40,14 @@ h3.currentUser {
   font-weight: 200;
 }
 
+div.splash-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  text-decoration:
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -76,7 +84,27 @@ input.submit {
   color: white;
 }
 
+.splash-link-container {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  margin-top: 160px;
+  width: 40%;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
+.splash-links {
+  text-decoration: none;
+  color: white;
+}
+
+.splash-links:hover {
+  border-bottom: .25px solid white;
+}
 
 div.submit-buttons {
   display: flex;
@@ -91,7 +119,7 @@ div.submit-buttons {
 }
 
 button.logo {
-  font-size: 20px;
+  font-size: 15px;
   color: white;
   font-weight: 200;
 
@@ -102,7 +130,7 @@ form {
   flex-flow: column;
   align-content: space-between;
   margin: 0 auto;
-  margin-top: 160px;
+  margin-top: 150px;
   width: 40%;
   box-sizing: border-box;
   text-align: center;
@@ -142,7 +170,12 @@ input {
   border: none;
 }
 
-.icons {
+.footer-link:hover {
+  border-bottom: .2px solid white;
+}
+
+.footer-link {
+  text-decoration: none;
   color: white;
   padding: 5px;
   height: 20px;

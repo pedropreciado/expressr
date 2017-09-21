@@ -4,6 +4,7 @@ import SessionFormContainer from "./session_form/session_form_container";
 import { AuthRoute } from "../util/route_util";
 import NavBarContainer from "./navbar/navbar_container";
 import Footer from "./footer/footer";
+import Splash from "./splash_page/splash";
 
 const App = () => (
   <div>
@@ -18,9 +19,10 @@ const App = () => (
       <NavBarContainer />
     </header>
     <Switch>
-      <Redirect to="/login" />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
+
       <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute exact path="/" component={Splash} />
     </ Switch>
     <Footer />
   </div>

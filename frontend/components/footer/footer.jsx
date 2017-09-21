@@ -9,7 +9,10 @@ const backgroundAuthor = (imgAuthor) => {
     )
   } else {
     return (
-      <p className="footer-text">created by: pedro preciado</p>
+      <p className="footer-text">created by: <a href="https://github.com/pedropreciado" className="footer-link">
+        pedro preciado
+      </a>
+      </p>
     )
   }
 }
@@ -17,8 +20,9 @@ const backgroundAuthor = (imgAuthor) => {
 const Footer = ({imgAuthor}) => {
   return (
     <footer>
-      <div className="icons">
-        <a href="https://github.com/">github</a>
+      <div>
+        <a href="https://github.com/" className="footer-link">github</a>
+        <a href="https://linkedin.com/" className="footer-link">linkedin</a>
       </div>
       {backgroundAuthor(imgAuthor)}
     </footer>
