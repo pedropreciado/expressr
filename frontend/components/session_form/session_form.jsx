@@ -23,6 +23,7 @@ class SessionForm extends React.Component {
   }
 
   errors() {
+    console.log(this.props.errors);
     return (
       <ul>
         {
@@ -38,9 +39,9 @@ class SessionForm extends React.Component {
     if (this.props.formType == "signup") {
       return (
         <label>
-          <input type="text" value={this.state.username}
-                             onChange={this.update("username")}
-                              onClick={() => this.setState(this.clearField("username"))}  />
+          <input type="text" value={this.state.email}
+                             onChange={this.update("email")}
+                              onClick={() => this.setState(this.clearField("email"))}  />
         </ label>
       )
     }
@@ -80,14 +81,14 @@ class SessionForm extends React.Component {
 
           {this.errors()}
 
-          {this.email_field()}
           <label>
 
-            <input type="text" value={this.state.email}
-              onChange={this.update("email")}
-              onClick={() => this.setState(this.clearField("email"))} />
+            <input type="text" value={this.state.username}
+              onChange={this.update("username")}
+              onClick={() => this.setState(this.clearField("username"))} />
           </label>
 
+          {this.email_field()}
 
             <label>
             <input type={this.passwordText()} value={this.state.password}
