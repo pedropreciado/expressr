@@ -36,6 +36,10 @@ html {
    color: white;
 }
 
+h3.currentUser {
+  font-weight: 200;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -62,6 +66,7 @@ button {
   background: none;
   border: 0;
   color: white;
+  font-weight: 200;
 }
 
 input.submit {
@@ -134,9 +139,11 @@ div.auth-page {
 
 input {
   color: lightgrey;
-
+  border: none;
 }
 
 .icons {
   color: white;
+  padding: 5px;
+  height: 20px;
 }

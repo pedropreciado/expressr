@@ -1,5 +1,6 @@
 class Api::PostsController < ApplicationController
   def new
+    render :new
   end
 
   def index
@@ -7,6 +8,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def create
