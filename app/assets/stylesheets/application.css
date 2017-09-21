@@ -14,22 +14,48 @@
  *= require_self
  */
 
-/*https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg*/
+/*
+lil cactus:
+  https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg
+
+light-trail:
+  https://static.pexels.com/photos/20721/pexels-photo.jpg
+*/
 
 html {
-   background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");
+   /*background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");*/
+   background-image: url("https://static.pexels.com/photos/20721/pexels-photo.jpg");
    background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
    -webkit-background-size: cover;
    background-size: cover;
    background-color: teal;
+   height: 100%;
+   box-sizing: border-box;
    color: white;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: .5px solid white;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2)
+
+}
+
 
 
 button {
@@ -44,6 +70,8 @@ input.submit {
   border-radius: 0;
   color: white;
 }
+
+
 
 div.submit-buttons {
   display: flex;
@@ -60,6 +88,7 @@ div.submit-buttons {
 button.logo {
   font-size: 20px;
   color: white;
+  font-weight: 100;
 
 }
 
@@ -71,17 +100,18 @@ form {
   margin-top: 160px;
   width: 40%;
   box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
   /*border: .5px solid white;*/
   /*opacity: .2;
   background-color: black;*/
-  text-align: center;
 }
 
 div.auth-page {
   display: flex;
   justify-content: space-between;
-  color: white;
-  background-image: url("");
+  transition: 2s;
+  /*color : white;*/
   /*border: .5px solid orange;*/
 }
 
@@ -90,6 +120,8 @@ div.auth-page {
   display: flex;
   justify-content: space-between;
   border-bottom: .5px solid white;
+  background-color: rgba(0, 0, 0, 0.2)
+
   /*opacity: .2;
   background-color: black;*/
 }
@@ -101,6 +133,10 @@ div.auth-page {
 }
 
 input {
-  color: black;
+  color: lightgrey;
 
+}
+
+.icons {
+  color: white;
 }
