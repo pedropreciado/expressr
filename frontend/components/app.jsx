@@ -9,7 +9,9 @@ const App = () => (
     <header className="nav-header">
       <h3>
       <Link to="/">
+        <button className="logo">
           expressr
+          </ button>
       </Link>
     </h3>
       <NavBarContainer />

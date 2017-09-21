@@ -14,10 +14,46 @@
  *= require_self
  */
 
-
+html {
+   background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-color: teal;
+   color: white;
+}
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+button {
+  background: none;
+  border: 0;
+  color: white;
+}
+
+input.submit {
+  background: none;
+  border: .5px solid white;
+  border-radius: 0;
+  color: white;
+}
+
+div.submit-buttons {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-around;
+
+}
+
+button.logo {
+  font-size: 20px;
+  color: white;
 
 }
 
@@ -29,30 +65,37 @@ form {
   margin-top: 200px;
   width: 40%;
   box-sizing: border-box;
-  border: .5px solid red;
+  border: .5px solid white;
+  opacity: .2;
+  background-color: black;
   text-align: center;
 }
 
 div.auth-page {
   display: flex;
   justify-content: space-between;
+  color: white;
+  background-image: url("");
+  /*border: .5px solid orange;*/
+  transition: 5s;
 }
 
-.logo {
-  text-decoration: none;
-}
 
 .nav-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: .5px solid magenta;
-  opacity: 0.5;
+  border-bottom: .5px solid white;
+  opacity: .2;
+  background-color: black;
 }
 
-:visited {
-  text-decoration: none;
+.nav-SessionLinks{
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 20px;
 }
 
 input {
-  color: grey;
+  color: black;
+
 }

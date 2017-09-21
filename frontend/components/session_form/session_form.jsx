@@ -6,9 +6,9 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { username: "", email: "", password: ""};
+    this.state = { username: "username", email: "email", password: "password"};
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.clearField = this.clearField.bind(this);
   };
 
   update(key) {
@@ -22,14 +22,6 @@ class SessionForm extends React.Component {
     this.props.action(this.state);
   }
 
-  // navLinks() {
-  //   if (this.props.formType == "login") {
-  //     return <Link to="/signup">sign up</ Link>
-  //   } else {
-  //     return <Link to="/login">log in</ Link >
-  //   }
-  // }
-  //
   errors() {
     return (
       <ul>
@@ -44,9 +36,28 @@ class SessionForm extends React.Component {
 
   email_field() {
     if (this.props.formType == "signup") {
-      return <label>
-                <input type="text" value="email" onChange={this.update("email")} />
-              </label>
+      return (
+        <label>
+          <input type="text" value={this.state.username}
+                             onChange={this.update("username")}
+                              onClick={() => this.setState(this.clearField("username"))}  />
+        </ label>
+      )
+    }
+  }
+
+  clearField(key) {
+    return { [key]: "" }
+  }
+
+  guestLogin() {
+    if (this.props.formType == "login") {
+      return (
+        <input type="submit"
+                className="submit"
+                onClick={() => this.setState({username: "guest", email: "null", password: 'thispassword'})}
+                value="guest login"/>
+      )
     }
   }
 
@@ -55,23 +66,30 @@ class SessionForm extends React.Component {
     return (
       <div className="auth-page">
         <form onSubmit={this.handleSubmit}>
-          <h2>expressr</h2>
+          <h1>expressr</h1>
           <h3>{this.props.formType}</h3>
 
           {this.errors()}
 
           {this.email_field()}
           <label>
-            <input type="text" value="username" onChange={this.update("username")} />
-          </ label>
+
+            <input type="text" value={this.state.email}
+              onChange={this.update("email")}
+              onClick={() => this.setState(this.clearField("email"))} />
+          </label>
+
 
             <label>
-            <input type="text" value="password" onChange={this.update("password")} />
+            <input type="text" value={this.state.password}
+                                onChange={this.update("password")}
+                                onClick={() => this.setState(this.clearField("password"))} />
             </ label>
 
-            <div>
-              <input type="submit" />
-           </ div>
+            <div className="submit-buttons">
+              <input type="submit" className="submit" value={this.props.formType}/>
+              {this.guestLogin()}
+            </ div>
         </form>
       </div>
     )
