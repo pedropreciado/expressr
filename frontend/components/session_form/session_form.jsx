@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {
-          this.props.errors.map((errors) => (
+          this.props.errors.map((error) => (
             <li>{error}</li>
           ))
         }
@@ -55,9 +55,17 @@ class SessionForm extends React.Component {
       return (
         <input type="submit"
                 className="submit"
-                onClick={() => this.setState({username: "guest", email: "null", password: 'thispassword'})}
+                onClick={() => this.setState({username: "guest", email: "guest", password: 'thispassword'})}
                 value="guest login"/>
       )
+    }
+  }
+
+  passwordText() {
+    if (this.state.password == "password") {
+      return "text";
+    } else {
+      return "password"
     }
   }
 
@@ -66,7 +74,7 @@ class SessionForm extends React.Component {
     return (
       <div className="auth-page">
         <form onSubmit={this.handleSubmit}>
-          <h1>expressr</h1>
+          <h1 id="form-title">expressr</h1>
           <h3>{this.props.formType}</h3>
 
           {this.errors()}
@@ -81,7 +89,7 @@ class SessionForm extends React.Component {
 
 
             <label>
-            <input type="text" value={this.state.password}
+            <input type={this.passwordText()} value={this.state.password}
                                 onChange={this.update("password")}
                                 onClick={() => this.setState(this.clearField("password"))} />
             </ label>
