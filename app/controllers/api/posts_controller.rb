@@ -36,8 +36,11 @@ class Api::PostsController < ApplicationController
 
   def destroy
     @post = current_user.posts.find(params[:id])
-    @post.delete!
-    # TODO: render
+    if @post.destroy!
+      render :show
+    else
+      @post.errors.full_messages, status: 422
+    end
   end
 
   def post_params

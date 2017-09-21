@@ -30,7 +30,7 @@ html {
    background-attachment: fixed;
    -webkit-background-size: cover;
    background-size: cover;
-   background-color: teal;
+   background-color: rgb(249, 240, 236);
    height: 100%;
    box-sizing: border-box;
    color: white;
