@@ -120,7 +120,7 @@ div.submit-buttons {
   flex-direction: row;
   padding: 20px;
   justify-content: space-around;
-
+  align-items:
 }
 
 #form-title {
@@ -139,22 +139,19 @@ form {
   flex-flow: column;
   align-content: space-between;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 140px;
   width: 40%;
   box-sizing: border-box;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
-  /*border: .5px solid white;*/
-  /*opacity: .2;
-  background-color: black;*/
+
 }
 
 div.auth-page {
   display: flex;
   justify-content: space-between;
   transition: 2s;
-  /*color : white;*/
-  /*border: .5px solid orange;*/
+
 }
 
 
@@ -164,8 +161,6 @@ div.auth-page {
   border-bottom: .5px solid white;
   background-color: rgba(0, 0, 0, 0.2)
 
-  /*opacity: .2;
-  background-color: black;*/
 }
 
 .nav-SessionLinks{
@@ -179,8 +174,8 @@ input {
   color: white;
   border: none;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.6)
-
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 5px;
 }
 
 .footer-link:hover {
