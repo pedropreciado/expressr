@@ -89,6 +89,10 @@ input.submit {
   color: white;
 }
 
+input.submit:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .splash-link-container {
   margin-top: 150px;
   display: flex;
@@ -171,8 +175,12 @@ div.auth-page {
 }
 
 input {
-  color: lightgrey;
+  font-size: 20px;
+  color: white;
   border: none;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6)
+
 }
 
 .footer-link:hover {
