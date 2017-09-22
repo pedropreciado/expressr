@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = current_user.followed_posts
   end
 
   def show
@@ -15,9 +15,9 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.author_id = current_user.id
     if @post.save
-      # TODO: render:
+      render :index
     else
-      flash[:errors] = @post.errors.full_messages
+      render json: @post.errors.full_messages, status: 422
     end
   end
 
@@ -28,9 +28,9 @@ class Api::PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update_attributes(post_params)
-      # TODO: render
+      render :index
     else
-      flash[:errors] = @post.errors.full_messages
+      render json: @post.errors.full_messages, status: 422
     end
   end
 

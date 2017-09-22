@@ -25,19 +25,26 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: "Post"
 
-  has_many :followees,
-    primary_key: :id,
-    foreign_key: :followee_id,
-    class_name: "Follow"
 
-  has_many :followers,
+  has_many :followees,
     primary_key: :id,
     foreign_key: :follower_id,
     class_name: "Follow"
 
-  has_many :followed_posts,
+  has_many :followers,
+    primary_key: :id,
+    foreign_key: :followee_id,
+    class_name: "Follow"
+
+
+  has_many :followed_users,
     through: :followees,
+    source: :followee
+
+  has_many :followed_posts,
+    through: :followed_users,
     source: :posts
+
 
   has_many :likes
 

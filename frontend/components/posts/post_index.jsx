@@ -1,7 +1,6 @@
 import React from "react";
 import PostIndexItem from "./post_index_item";
 import PostForm from "./post_form";
-import PostIndexItem from "./post_index_item";
 import { Link } from "react-router-dom";
 
 
