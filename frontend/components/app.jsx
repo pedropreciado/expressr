@@ -26,7 +26,7 @@ const App = () => (
       <Route path="/posts" component={PostIndexContainer} />
       <AuthRoute exact path="/" component={Splash} />
     </ Switch>
-    <Footer />
+    // <Footer /> NEED TO FIX FOOTER
   </div>
 
 );
