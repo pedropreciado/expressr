@@ -30,7 +30,7 @@ html {
    background-attachment: fixed;
    -webkit-background-size: cover;
    background-size: cover;
-   background-color: rgb(249, 240, 236);
+   background-color: maroon;
    height: 100%;
    box-sizing: border-box;
    color: white;
@@ -57,6 +57,14 @@ li.errors {
   position: relative;
 }
 
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: .5px solid white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -64,7 +72,7 @@ footer {
   margin: 0 auto;
   font-size: 15px;
   font-weight: 500;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   border-top: .5px solid white;
@@ -72,8 +80,6 @@ footer {
   background-color: rgba(0, 0, 0, 0.2);
 
 }
-
-
 
 button {
   background: none;
@@ -143,24 +149,43 @@ form {
   box-sizing: border-box;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: .5s;
 
+}
+
+div.item-header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#post-author {
+  background-color: cyan;
 }
 
 div.auth-page {
   display: flex;
   justify-content: space-between;
   transition: 2s;
-
 }
 
-
-.nav-header {
+ul.post-index {
   display: flex;
-  justify-content: space-between;
-  border-bottom: .5px solid white;
-  background-color: rgba(0, 0, 0, 0.2);
-
+  align-items: center;
 }
+
+img.post-img {
+  width: 50%;
+  height: 50%;
+}
+
+div.item-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: none;
+  margin: 20px;
+}
+
 
 .nav-SessionLinks {
   display: flex;

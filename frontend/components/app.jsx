@@ -5,7 +5,7 @@ import { AuthRoute } from "../util/route_util";
 import NavBarContainer from "./navbar/navbar_container";
 import Footer from "./footer/footer";
 import Splash from "./splash_page/splash";
-import PostIndexContainer from "./posts/post_index_container"
+import PostIndexContainer from "./posts/post_index_container";
 
 const App = () => (
   <div>
@@ -23,7 +23,7 @@ const App = () => (
 
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <AuthRoute path="/feed" component={PostIndexContainer} />
+      <Route path="/posts" component={PostIndexContainer} />
       <AuthRoute exact path="/" component={Splash} />
     </ Switch>
     <Footer />

@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-    @posts = current_user.followed_posts
+    @posts = current_user.followed_posts + current_user.posts
   end
 
   def show
@@ -13,7 +13,7 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.author_id = current_user.id
+    @post.author = current_user
     if @post.save
       render :index
     else

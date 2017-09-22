@@ -10,11 +10,13 @@ class PostIndex extends React.Component {
     this.props.fetchPosts();
   }
 
+
+
   render() {
 
     return (
       <div>
-        <ul>
+        <ul className="post=index">
           {
             this.props.posts.map((post) => (
               <PostIndexItem post={post} />
@@ -26,3 +28,16 @@ class PostIndex extends React.Component {
   }
 
 }
+
+// PostIndex.defaultProps = {
+//   post: {
+//     id: "",
+//     title: "",
+//     body: "",
+//     url: "",
+//     content: "",
+//     author_id: ""
+//   }
+// }
+
+export default PostIndex;

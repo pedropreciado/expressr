@@ -13,7 +13,7 @@
 #
 
 class Post < ApplicationRecord
-  validates :content, :title, :body, :url, :author_id, presence: true
+  validates :content, :title, :author_id, presence: true
 
   belongs_to :author,
     primary_key: :id,
