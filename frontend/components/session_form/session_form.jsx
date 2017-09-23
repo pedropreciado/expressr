@@ -6,7 +6,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { username: "username", email: "email", password: "password"};
+    this.state = { errors: [], username: "", email: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearField = this.clearField.bind(this);
   };
@@ -15,6 +15,14 @@ class SessionForm extends React.Component {
     return (event) => {
       this.setState({[key]: event.target.value});
     }
+  }
+ 
+  componentWillReceiveProps(newProps) {
+    this.setState({errors: [newProps.errors]})
+  }
+
+  componentWillMount() {
+    this.setState({errors: []})
   }
 
   handleSubmit(event) {
@@ -26,7 +34,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {
-          this.props.errors.map((error) => (
+          this.state.errors.map((error) => (
             <li className="errors">{error}</li>
           ))
         }
@@ -40,7 +48,7 @@ class SessionForm extends React.Component {
         <label>
           <input type="text" value={this.state.email}
                              onChange={this.update("email")}
-                              onClick={() => this.setState(this.clearField("email"))}  />
+                              placeholder="email"  />
         </ label>
       )
     }
@@ -84,7 +92,7 @@ class SessionForm extends React.Component {
 
             <input type="text" value={this.state.username}
               onChange={this.update("username")}
-              onClick={() => this.setState(this.clearField("username"))} />
+              placeholder="username" />
           </label>
 
           {this.email_field()}
@@ -92,7 +100,7 @@ class SessionForm extends React.Component {
             <label>
             <input type={this.passwordText()} value={this.state.password}
                                 onChange={this.update("password")}
-                                onClick={() => this.setState(this.clearField("password"))} />
+                                placeholder="password" />
             </ label>
 
             <div className="submit-buttons">

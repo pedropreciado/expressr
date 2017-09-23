@@ -24,3 +24,5 @@ bundle.js.map
 npm-debug.log
 node_modules
 
+
+# Ignore application configuration

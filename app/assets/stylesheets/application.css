@@ -159,7 +159,9 @@ form {
 div.item-header {
   display: flex;
   justify-content: space-between;
-  background-color: magenta;
+  background: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #post-author {
@@ -189,14 +191,25 @@ img.post-img {
 }
 
 div.item-container {
-  display: flex;
+  /*display: flex;
   flex-flow: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center;*/
+  /*justify-content: center;*/
   background-color: black;
   margin: 20px;
 }
 
+div.post-options-match {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: none;
+}
+
+div.post-options-other {
+  text-align: center;
+}
 
 .nav-SessionLinks {
   display: flex;
@@ -211,6 +224,11 @@ input {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.6);
   margin: 5px;
+}
+
+#edit-delete {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .footer-link:hover {

@@ -49,7 +49,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
+  gem 'figaro'
   gem 'pry-rails'
+  gem 'paperclip', '~> 5.0.0.beta1' 
 end
 
 
