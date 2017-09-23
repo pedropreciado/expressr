@@ -5,7 +5,44 @@ import { Link } from "react-router-dom";
 import PostFormContainer from "./post_form_container";
 import Modal from "react-modal";
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 class PostIndex extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modalIsOpen: false
+    }
+
+    this.openModel = this.openModel.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+
+
+  openModel() {
+    this.setState({modalIsOpen: true})
+  }
+
+  afterOpenModal() {
+
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
 
   componentDidMount() {
     this.props.fetchPosts();
@@ -16,7 +53,32 @@ class PostIndex extends React.Component {
 
     return (
       <div>
-        <button onClick={this.openModal}>create post.</button>
+
+        <div className="new-posts-container">
+          <div onClick={this.openModel}>
+            text
+          </div>
+          <div onClick={this.openModel}>
+            photo
+          </div>
+          <div onClick={this.openModel}>
+            audio
+          </div>
+          <div onClick={this.openModel}>
+            link
+          </div>
+          <div onClick={this.openModel}>
+            video
+          </div>
+        </ div>
+
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          contentLabel="Post Image"
+          >
+          <PostForm />
+        </ Modal>
 
         <ul className="post-index">
           {
@@ -25,7 +87,7 @@ class PostIndex extends React.Component {
             ))
           }
       </ul>
-        <PostForm />
+
     </div>
     )
   }

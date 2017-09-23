@@ -98,6 +98,10 @@ input.submit:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+button.post-form-button {
+  background-color: cyan;
+}
+
 .splash-link-container {
   margin-top: 150px;
   display: flex;
@@ -242,4 +246,8 @@ input {
   color: white;
   padding: 5px;
   height: 20px;
+}
+
+div.new-posts-container {
+  background-color: red;
 }

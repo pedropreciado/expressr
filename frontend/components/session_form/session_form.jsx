@@ -6,7 +6,12 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { errors: [], username: "", email: "", password: ""};
+    this.state = {
+      errors: [],
+      username: "",
+      email: "",
+      password: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearField = this.clearField.bind(this);
   };
@@ -16,7 +21,7 @@ class SessionForm extends React.Component {
       this.setState({[key]: event.target.value});
     }
   }
- 
+
   componentWillReceiveProps(newProps) {
     this.setState({errors: [newProps.errors]})
   }
