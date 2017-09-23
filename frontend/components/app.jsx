@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Link, Switch, } from "react-router-dom";
 import SessionFormContainer from "./session_form/session_form_container";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavBarContainer from "./navbar/navbar_container";
 import Footer from "./footer/footer";
 import Splash from "./splash_page/splash";
@@ -24,9 +24,10 @@ const App = () => (
 
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <Route path="/posts" component={PostIndexContainer}/>
+      <ProtectedRoute path="/posts" component={PostIndexContainer}/>
       <AuthRoute exact path="/" component={Splash} />
     </ Switch>
+    <Footer />
   </div>
 
 );

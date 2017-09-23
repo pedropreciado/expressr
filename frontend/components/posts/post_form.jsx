@@ -41,11 +41,12 @@ class PostForm extends React.Component {
 
   render() {
     return (
-    <div>
+    <div className="post-form-container">
       <Dropzone
         multiple={false}
         accept="image/*"
-        onDrop={this.onImageDrop.bind(this)}>
+        onDrop={this.onImageDrop.bind(this)}
+        >
         <p> drop an image or click to select a file to upload.</ p>
           </ Dropzone>
 
