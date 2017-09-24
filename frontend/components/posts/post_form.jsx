@@ -29,6 +29,7 @@ class PostForm extends React.Component {
     event.preventDefault();
     this.props.createPost(this.state.post).then(() => this.props.history.push("/posts"))
     this.props.closeModal();
+    window.location.reload();
   }
 
   update(key, formType) {
