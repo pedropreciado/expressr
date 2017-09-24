@@ -79,15 +79,23 @@ class PostForm extends React.Component {
   render() {
     return (
     <div className="post-form-container">
-      <form onSubmit={this.handleSubmit}>
-        <h2>post image</h2>
-        <label>
+      <form onSubmit={this.handleSubmit} className="modal-form">
+        <h2 id="form-header">upload an image.</h2>
+
           <input type="text"
             value={this.state.post.title}
             onChange={this.update("title")}
             placeholder="title"
+            className="input"
             />
-        </label>
+
+        <div>
+            {this.state.uploadedFileCloudinaryUrl === '' ? "" :
+              <div>
+                <img className="submitted-photo"
+                  src={this.state.uploadedFileCloudinaryUrl} />
+              </div>}
+            </div>
 
         <Dropzone
           multiple={false}
@@ -98,24 +106,14 @@ class PostForm extends React.Component {
           <p> drop an image or click to select a file to upload.</ p>
             </ Dropzone>
 
-            <div>
-              {this.state.uploadedFileCloudinaryUrl === '' ? "" :
-                <div>
-                  <p>{this.state.uploadedFile.name}</p>
-                  <img className="submitted-photo"
-                       src={this.state.uploadedFileCloudinaryUrl} />
-                </div>}
-              </div>
 
-        <label>
           <input type="text"
             value={this.state.post.body}
             onChange={this.update("body")}
             placeholder="caption"
             />
-        </label>
 
-          <input type="submit" value="post image"/>
+          <input type="submit" className="submit" value="post image"/>
       </ form>
     </div>
     )

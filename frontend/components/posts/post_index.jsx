@@ -37,28 +37,14 @@ class PostIndex extends React.Component {
   }
 
 
+
   render() {
 
     return (
       <div>
 
-        <div className="new-posts-container">
-          <div onClick={this.openModel} className="new-post-button"id="text">
-            text
-          </div>
-          <div onClick={this.openModel} className="new-post-button"id="photo">
-            photo
-          </div>
-          <div onClick={this.openModel} className="new-post-button"id="audio">
-            audio
-          </div>
-          <div onClick={this.openModel} className="new-post-button"id="link">
-            link
-          </div>
-          <div onClick={this.openModel} className="new-post-button"id="video">
-            video
-          </div>
-        </ div>
+        <ul className="post-index">
+
 
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -66,16 +52,32 @@ class PostIndex extends React.Component {
           contentLabel="Post Image"
           className="modal"
           >
-          <button onClick={this.closeModal} id="close-button">X</button>
-          <PostFormContainer />
+          <button onClick={this.closeModal} id="close-button">close form.</button>
+          <PostFormContainer/>
         </ Modal>
 
-        <ul className="post-index">
           {
             this.props.posts.map((post) => (
               <PostIndexItem post={post} currentUser={this.props.currentUser}/>
             ))
           }
+          <div className="new-posts-container">
+            <div onClick={this.openModel} className="new-post-button"id="text">
+              text
+            </div>
+            <div onClick={this.openModel} className="new-post-button"id="photo">
+              photo
+            </div>
+            <div onClick={this.openModel} className="new-post-button"id="audio">
+              audio
+            </div>
+            <div onClick={this.openModel} className="new-post-button"id="link">
+              link
+            </div>
+            <div onClick={this.openModel} className="new-post-button"id="video">
+              video
+            </div>
+            </ div>
       </ul>
 
     </div>

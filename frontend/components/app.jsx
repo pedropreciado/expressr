@@ -27,7 +27,6 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/posts" component={PostIndexContainer}/>
     </ Switch>
-    <Footer />
   </div>
 
 );
@@ -35,4 +34,5 @@ const App = () => (
 export default App;
 
 
+// <Footer />
 // ADD FOOTER!!

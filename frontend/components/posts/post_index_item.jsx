@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-const options = (body, author, currentUser) => {
+const options = (post, body, author, currentUser, deletePost) => {
 
+  console.log(post);
 
   if (author == currentUser) {
     return (
@@ -10,7 +11,7 @@ const options = (body, author, currentUser) => {
         <a>{body}</a>
         <div id="edit-delete">
           <a>{"edit"}</a>
-          <a>{"delete"}</a>
+          <button onClick={() => deletePost(post)}>delete</button>
         </div>
       </div>
     )
@@ -23,7 +24,7 @@ const options = (body, author, currentUser) => {
   }
 }
 
-const PostIndexItem = ({post, currentUser}) => {
+const PostIndexItem = ({post, currentUser, deletePost}) => {
 
   return (
     <div className="item-container">
@@ -32,10 +33,8 @@ const PostIndexItem = ({post, currentUser}) => {
         <a>{post.author.username}</a>
         <a>{post.title}</a>
       </ div>
-    <br />
       <img className="post-img" src={post.url}/>
-      <br/ >
-        {options(post.body, post.author.username, currentUser.username)}
+        {options(post, post.body, post.author.username, currentUser.username, deletePost)}
     </div>
   )
 }
