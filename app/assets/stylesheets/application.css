@@ -197,10 +197,6 @@ img.post-img {
 }
 
 div.item-container {
-  /*display: flex;
-  flex-flow: column;
-  align-items: center;*/
-  /*justify-content: center;*/
   background-color: black;
   margin: 20px;
 }

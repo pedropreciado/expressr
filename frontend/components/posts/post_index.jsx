@@ -20,8 +20,6 @@ class PostIndex extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-
-
   openModel() {
     this.setState({modalIsOpen: true})
   }
