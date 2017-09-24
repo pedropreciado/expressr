@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    @post = current_user.posts.find(params[:id])
+    @post = Post.all.find(params[:id])
     if @post.destroy!
       render :show
     else

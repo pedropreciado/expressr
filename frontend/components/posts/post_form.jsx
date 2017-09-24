@@ -10,6 +10,9 @@ class PostForm extends React.Component {
 
   constructor(props) {
     super(props);
+
+    console.log(props.formType);
+
     this.state = {
       uploadedFileCloudinaryUrl: "",
       post: {
@@ -27,8 +30,7 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    (this.state);
-    // this.props.createPost(this.state.post).then(() => this.props.history.push("/"))
+    this.props.createPost(this.state.post).then(() => this.props.history.push("/"))
   }
 
   update(key) {

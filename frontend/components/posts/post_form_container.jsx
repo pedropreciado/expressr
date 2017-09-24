@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     post = state.posts[ownProps.match.params.postId];
     formType = "edit";
   }
-  return { post, formType, currentUser };
+  return { post, currentUser };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

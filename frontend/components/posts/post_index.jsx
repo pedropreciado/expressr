@@ -12,15 +12,17 @@ class PostIndex extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      formType: ""
     }
 
     this.openModel = this.openModel.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  openModel() {
+  openModel(formType) {
     this.setState({modalIsOpen: true})
   }
 
@@ -36,7 +38,10 @@ class PostIndex extends React.Component {
     this.props.fetchPosts();
   }
 
-
+  handleClick(formType) {
+    this.setState({ formType })
+    this.openModel();
+  }
 
   render() {
 
@@ -53,28 +58,28 @@ class PostIndex extends React.Component {
           className="modal"
           >
           <button onClick={this.closeModal} id="close-button">close form.</button>
-          <PostFormContainer/>
+          <PostFormContainer formType={this.state.formType}/>
         </ Modal>
 
           {
             this.props.posts.map((post) => (
-              <PostIndexItem post={post} currentUser={this.props.currentUser}/>
+              <PostIndexItem post={post} deletePost={this.props.deletePost} currentUser={this.props.currentUser}/>
             ))
           }
           <div className="new-posts-container">
-            <div onClick={this.openModel} className="new-post-button"id="text">
+            <div onClick={() => this.handleClick("text")} className="new-post-button"id="text">
               text
             </div>
-            <div onClick={this.openModel} className="new-post-button"id="photo">
+            <div onClick={() => this.handleClick("photo")} className="new-post-button"id="photo">
               photo
             </div>
-            <div onClick={this.openModel} className="new-post-button"id="audio">
+            <div onClick={() => this.handleClick("audio")} className="new-post-button"id="audio">
               audio
             </div>
-            <div onClick={this.openModel} className="new-post-button"id="link">
+            <div onClick={() => this.handleClick("link")} className="new-post-button"id="link">
               link
             </div>
-            <div onClick={this.openModel} className="new-post-button"id="video">
+            <div onClick={() => this.handleClick("video")} className="new-post-button"id="video">
               video
             </div>
             </ div>

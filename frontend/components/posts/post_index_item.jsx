@@ -3,15 +3,13 @@ import { Link, withRouter } from "react-router-dom";
 
 const options = (post, body, author, currentUser, deletePost) => {
 
-  console.log(post);
-
   if (author == currentUser) {
     return (
       <div className="post-options-match">
         <a>{body}</a>
         <div id="edit-delete">
           <a>{"edit"}</a>
-          <button onClick={() => deletePost(post)}>delete</button>
+          <button onClick={() => deletePost(post.id)}>delete</button>
         </div>
       </div>
     )
