@@ -58,12 +58,19 @@ class PostIndex extends React.Component {
           className="modal"
           >
           <button onClick={this.closeModal} id="close-button">close form.</button>
-          <PostFormContainer formType={this.state.formType}/>
+          <PostFormContainer
+            formType={this.state.formType}
+            closeModal={this.closeModal}
+            />
         </ Modal>
 
           {
             this.props.posts.map((post) => (
-              <PostIndexItem post={post} deletePost={this.props.deletePost} currentUser={this.props.currentUser}/>
+              <PostIndexItem
+                post={post}
+                deletePost={this.props.deletePost}
+                currentUser={this.props.currentUser}
+                />
             ))
           }
           <div className="new-posts-container">

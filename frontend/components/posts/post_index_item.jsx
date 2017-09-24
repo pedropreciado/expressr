@@ -20,6 +20,7 @@ const options = (post, body, author, currentUser, deletePost) => {
     </div>
   )
   }
+  closeModal;
 }
 
 const postContent = (post) => {
@@ -37,7 +38,6 @@ const postContent = (post) => {
   }
 
 const PostIndexItem = ({post, currentUser, deletePost}) => {
-
   return (
     <div className="item-container">
 
