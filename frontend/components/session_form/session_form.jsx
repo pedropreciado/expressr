@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.action(this.state);
+    this.props.action(this.state).then(() => this.props.history.push('/posts'));
   }
 
   errors() {

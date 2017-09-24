@@ -5,7 +5,6 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = current_user.followed_posts + current_user.posts
-    p @post
   end
 
   def show

@@ -45,19 +45,19 @@ class PostIndex extends React.Component {
       <div>
 
         <div className="new-posts-container">
-          <div onClick={this.openModel} id="text">
+          <div onClick={this.openModel} className="new-post-button"id="text">
             text
           </div>
-          <div onClick={this.openModel} id="photo">
+          <div onClick={this.openModel} className="new-post-button"id="photo">
             photo
           </div>
-          <div onClick={this.openModel} id="">
+          <div onClick={this.openModel} className="new-post-button"id="audio">
             audio
           </div>
-          <div onClick={this.openModel}>
+          <div onClick={this.openModel} className="new-post-button"id="link">
             link
           </div>
-          <div onClick={this.openModel}>
+          <div onClick={this.openModel} className="new-post-button"id="video">
             video
           </div>
         </ div>

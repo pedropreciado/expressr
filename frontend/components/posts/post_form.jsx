@@ -21,13 +21,13 @@ class PostForm extends React.Component {
       }
     };
 
-    console.log(this.state);
+    (this.state);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    (this.state);
     // this.props.createPost(this.state.post).then(() => this.props.history.push("/"))
   }
 
@@ -59,7 +59,7 @@ class PostForm extends React.Component {
                             .field('file', file);
     upload.end((err, response) => {
       if (err) {
-        console.log(err);
+        (err);
       }
       if (response.body.secure_url !== '') {
         this.setState({
