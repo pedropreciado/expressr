@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
       email: "",
       password: ""
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearField = this.clearField.bind(this);
   };
@@ -103,9 +104,10 @@ class SessionForm extends React.Component {
           {this.email_field()}
 
             <label>
-            <input type={this.passwordText()} value={this.state.password}
-                                onChange={this.update("password")}
-                                placeholder="password" />
+            <input type={this.passwordText()}
+                   value={this.state.password}
+                   onChange={this.update("password")}
+                   placeholder="password" />
             </ label>
 
             <div className="submit-buttons">

@@ -12,14 +12,15 @@ const mapStateToProps = (state, ownProps) => {
     post = state.posts[ownProps.match.params.postId];
     formType = "edit";
   }
-  return { post, formType };
+  return { post, formType, currentUser };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.match.path === "/" ? createPost : updatePost;
+
   return {
     fetchPost: id => dispatch(fetchPost(id)),
-    action: post => dispatch(action(post))
+    createPost: (post) => dispatch(createPost(post)),
+    updatePost: (post) => dispatch(update(post))
   };
 };
 

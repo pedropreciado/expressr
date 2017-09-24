@@ -1,6 +1,7 @@
 import React from "react";
 import Dropzone from "react-dropzone";
 import request from "superagent";
+import merge from "lodash/merge";
 
 const CLOUDINARY_UPLOAD_PRESET = 'gi1vnekd';
 const CLOUDINARY_UPLOAD_URL = ' https://api.cloudinary.com/v1_1/dj6qsjknw/image/upload';
@@ -9,10 +10,39 @@ class PostForm extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
-      uploadedFileCloudinaryUrl: ""
+      uploadedFileCloudinaryUrl: "",
+      post: {
+        content: "",
+        title: "",
+        body: "",
+        url: "",
+        author: ""
+      }
     };
+
+    console.log(this.state);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state);
+    // this.props.createPost(this.state.post).then(() => this.props.history.push("/"))
+  }
+
+  update(key) {
+
+    return (event) => {
+      event.preventDefault();
+      this.setState({
+        post: merge(
+          {}, this.state.post, {
+            [key]: event.target.value
+          }
+        )
+      })
+    }
   }
 
   onImageDrop(files) {
@@ -33,7 +63,14 @@ class PostForm extends React.Component {
       }
       if (response.body.secure_url !== '') {
         this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
+          uploadedFileCloudinaryUrl: response.body.secure_url,
+          post: merge(
+            {}, this.state.post, {
+              url: response.body.secure_url,
+              author: currentUser,
+              content: "img"
+            }
+          )
         });
       }
     });
@@ -42,21 +79,44 @@ class PostForm extends React.Component {
   render() {
     return (
     <div className="post-form-container">
-      <Dropzone
-        multiple={false}
-        accept="image/*"
-        onDrop={this.onImageDrop.bind(this)}
-        >
-        <p> drop an image or click to select a file to upload.</ p>
-          </ Dropzone>
+      <form onSubmit={this.handleSubmit}>
+        <h2>post image</h2>
+        <label>
+          <input type="text"
+            value={this.state.post.title}
+            onChange={this.update("title")}
+            placeholder="title"
+            />
+        </label>
 
-          <div>
-            {this.state.uploadedFileCloudinaryUrl === '' ? "" :
-              <div>
-                <p>{this.state.uploadedFile.name}</p>
-                <img src={this.state.uploadedFileCloudinaryUrl} />
-              </div>}
-            </div>
+        <Dropzone
+          multiple={false}
+          accept="image/*"
+          onDrop={this.onImageDrop.bind(this)}
+          className="dropzone"
+          >
+          <p> drop an image or click to select a file to upload.</ p>
+            </ Dropzone>
+
+            <div>
+              {this.state.uploadedFileCloudinaryUrl === '' ? "" :
+                <div>
+                  <p>{this.state.uploadedFile.name}</p>
+                  <img className="submitted-photo"
+                       src={this.state.uploadedFileCloudinaryUrl} />
+                </div>}
+              </div>
+
+        <label>
+          <input type="text"
+            value={this.state.post.body}
+            onChange={this.update("body")}
+            placeholder="caption"
+            />
+        </label>
+
+          <input type="submit" value="post image"/>
+      </ form>
     </div>
     )
   }

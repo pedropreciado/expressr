@@ -5,16 +5,6 @@ import { Link } from "react-router-dom";
 import PostFormContainer from "./post_form_container";
 import Modal from "react-modal";
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
 
 class PostIndex extends React.Component {
 
@@ -55,13 +45,13 @@ class PostIndex extends React.Component {
       <div>
 
         <div className="new-posts-container">
-          <div onClick={this.openModel}>
+          <div onClick={this.openModel} id="text">
             text
           </div>
-          <div onClick={this.openModel}>
+          <div onClick={this.openModel} id="photo">
             photo
           </div>
-          <div onClick={this.openModel}>
+          <div onClick={this.openModel} id="">
             audio
           </div>
           <div onClick={this.openModel}>
@@ -76,8 +66,10 @@ class PostIndex extends React.Component {
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           contentLabel="Post Image"
+          className="modal"
           >
-          <PostForm />
+          <button onClick={this.closeModal} id="close-button">X</button>
+          <PostFormContainer />
         </ Modal>
 
         <ul className="post-index">
