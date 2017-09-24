@@ -11,8 +11,6 @@ class PostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props.formType);
-
     this.state = {
       uploadedFileCloudinaryUrl: "",
       post: {
@@ -23,8 +21,7 @@ class PostForm extends React.Component {
         author: ""
       }
     };
-
-    (this.state);
+    this.postForm = this.postForm.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -78,45 +75,81 @@ class PostForm extends React.Component {
     });
   }
 
+  postForm(formType) {
+
+    console.log(formType);
+
+    if (formType === "text") {
+      return (
+        <div className="post-form-container" id="text-post-header">
+          <form onSubmit={this.handleSubmit} className="modal-form">
+            <h2 id="form-header">what are you thinking about.</h2>
+
+              <input type="text"
+                value={this.state.post.title}
+                onChange={this.update("title")}
+                placeholder="title"
+                className="input"
+                />
+
+              <input type="text"
+                value={this.state.post.body}
+                onChange={this.update("body")}
+                placeholder="body"
+                />
+
+              <input type="submit" className="submit" value="post image"/>
+          </ form>
+        </div>
+      )
+    } else if (this.props.formType === "photo") {
+      return (
+        <div className="post-form-container">
+          <form onSubmit={this.handleSubmit} className="modal-form">
+            <h2 id="form-header">upload an image.</h2>
+
+              <input type="text"
+                value={this.state.post.title}
+                onChange={this.update("title")}
+                placeholder="title"
+                className="input"
+                />
+
+            <div>
+                {this.state.uploadedFileCloudinaryUrl === '' ? "" :
+                  <div>
+                    <img className="submitted-photo"
+                      src={this.state.uploadedFileCloudinaryUrl} />
+                  </div>}
+                </div>
+
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={this.onImageDrop.bind(this)}
+              className="dropzone"
+              >
+              <p> drop an image or click to select a file to upload.</ p>
+                </ Dropzone>
+
+
+              <input type="text"
+                value={this.state.post.body}
+                onChange={this.update("body")}
+                placeholder="caption"
+                />
+
+              <input type="submit" className="submit" value="post image"/>
+          </ form>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
-    <div className="post-form-container">
-      <form onSubmit={this.handleSubmit} className="modal-form">
-        <h2 id="form-header">upload an image.</h2>
-
-          <input type="text"
-            value={this.state.post.title}
-            onChange={this.update("title")}
-            placeholder="title"
-            className="input"
-            />
-
-        <div>
-            {this.state.uploadedFileCloudinaryUrl === '' ? "" :
-              <div>
-                <img className="submitted-photo"
-                  src={this.state.uploadedFileCloudinaryUrl} />
-              </div>}
-            </div>
-
-        <Dropzone
-          multiple={false}
-          accept="image/*"
-          onDrop={this.onImageDrop.bind(this)}
-          className="dropzone"
-          >
-          <p> drop an image or click to select a file to upload.</ p>
-            </ Dropzone>
-
-
-          <input type="text"
-            value={this.state.post.body}
-            onChange={this.update("body")}
-            placeholder="caption"
-            />
-
-          <input type="submit" className="submit" value="post image"/>
-      </ form>
+      <div>
+      {this.postForm(this.props.formType)}
     </div>
     )
   }
