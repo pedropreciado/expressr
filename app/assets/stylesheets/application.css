@@ -26,8 +26,8 @@ html {
    /*background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");*/
    box-sizing: border-box;
    color: white;
-   background-color: grey;
-   /*background-image: url("https://static.pexels.com/photos/20721/pexels-photo.jpg");*/
+   background-color: black;
+   background-image: url("https://static.pexels.com/photos/8892/pexels-photo.jpg");
    background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
@@ -179,7 +179,7 @@ ul.post-index {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  background-color: dimgrey;
+
 }
 
 
@@ -305,11 +305,13 @@ img.submitted-photo {
     font-weight: 200;
     font-size: 30px;
     margin: 0 auto;
+    margin: 0 auto;
     padding: 10px;
  }
 
  .modal-form {
    background-color: rgb(86, 86, 86);
+
    margin-bottom: 100%;
    font-weight: 100;
    overflow: scroll;
@@ -327,3 +329,11 @@ img.submitted-photo {
    font-size: 30px;
    border-radius: 0;
  }
+
+.item-content-text {
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+}

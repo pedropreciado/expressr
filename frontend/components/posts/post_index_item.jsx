@@ -22,6 +22,20 @@ const options = (post, body, author, currentUser, deletePost) => {
   }
 }
 
+const postContent = (post) => {
+
+  if (post.content === "text") {
+    return (
+      <div className="item-content-text">
+        {post.body}
+      </div>
+    )} else if (post.content === "img") {
+      return (
+      <img className="post-img" src={post.url}/>
+    )
+    }
+  }
+
 const PostIndexItem = ({post, currentUser, deletePost}) => {
 
   return (
@@ -31,7 +45,9 @@ const PostIndexItem = ({post, currentUser, deletePost}) => {
         <a>{post.author.username}</a>
         <a>{post.title}</a>
       </ div>
-      <img className="post-img" src={post.url}/>
+
+        {postContent(post)}
+
         {options(post, post.body, post.author.username, currentUser.username, deletePost)}
     </div>
   )

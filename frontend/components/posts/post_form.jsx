@@ -18,9 +18,10 @@ class PostForm extends React.Component {
         title: "",
         body: "",
         url: "",
-        author: ""
+        author: this.props.current_user
       }
     };
+
     this.postForm = this.postForm.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -30,14 +31,15 @@ class PostForm extends React.Component {
     this.props.createPost(this.state.post).then(() => this.props.history.push("/"))
   }
 
-  update(key) {
+  update(key, formType) {
 
     return (event) => {
       event.preventDefault();
       this.setState({
         post: merge(
           {}, this.state.post, {
-            [key]: event.target.value
+            [key]: event.target.value,
+            content: formType
           }
         )
       })
@@ -66,8 +68,6 @@ class PostForm extends React.Component {
           post: merge(
             {}, this.state.post, {
               url: response.body.secure_url,
-              author: currentUser,
-              content: "img"
             }
           )
         });
@@ -77,9 +77,9 @@ class PostForm extends React.Component {
 
   postForm(formType) {
 
-    console.log(formType);
 
     if (formType === "text") {
+
       return (
         <div className="post-form-container" id="text-post-header">
           <form onSubmit={this.handleSubmit} className="modal-form">
@@ -87,7 +87,7 @@ class PostForm extends React.Component {
 
               <input type="text"
                 value={this.state.post.title}
-                onChange={this.update("title")}
+                onChange={this.update("title", formType)}
                 placeholder="title"
                 className="input"
                 />
@@ -98,7 +98,7 @@ class PostForm extends React.Component {
                 placeholder="body"
                 />
 
-              <input type="submit" className="submit" value="post image"/>
+              <input type="submit" className="submit" value="upload text."/>
           </ form>
         </div>
       )
