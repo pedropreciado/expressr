@@ -24,10 +24,10 @@ light-trail:
 
 html {
    /*background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");*/
+   background-image: url("https://static.pexels.com/photos/8892/pexels-photo.jpg");
    box-sizing: border-box;
    color: white;
    background-color: black;
-   background-image: url("https://static.pexels.com/photos/8892/pexels-photo.jpg");
    background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
