@@ -6,6 +6,8 @@ import PostForm from './post_form';
 import { fetchPost, createPost, updatePost } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  let currentUser = state.session.currentUser;
   let post = { title: "", body: "" };
   let formType = "new";
   if (ownProps.match.path == "/posts/:postId/edit") {

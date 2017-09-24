@@ -3,8 +3,8 @@ import PostIndex from "./post_index";
 import { fetchPosts, deletePost, createPost } from "../../actions/post_actions";
 
 const mapStateToProps = (state) => {
-  console.log(state);
-  return {
+
+    return {
     posts: Object.keys(state.posts).map((id) => state.posts[id]),
     currentUser: state.session.currentUser
   }
