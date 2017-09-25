@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import SearchBar from "../search_bar/search_bar";
+
 
 const displayName = (currentUser, logout) => (
   <navGroup className="nav-group">
@@ -15,9 +17,13 @@ const displayLinks = () => (
   </nav>
 )
 
-const NavBar = ({currentUser, logout}) => (
-  currentUser ? displayName(currentUser, logout) : displayLinks()
-
-);
+const NavBar = ({currentUser, logout, fetchUser }) => {
+  return (
+    <div>
+    <SearchBar fetchUser={fetchUser}/>
+    {currentUser ? displayName(currentUser, logout) : displayLinks()}
+  </div>
+  )
+};
 
 export default NavBar;

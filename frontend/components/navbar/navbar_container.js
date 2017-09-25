@@ -4,12 +4,12 @@ import NavBar from "./navbar";
 import { fetchUser } from "../../actions/users_actions";
 
 const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+  currentUser: session.currentUser   
 })
 
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
-  fetchUser: (user) => dispatch(fetchUser(user))
+  fetchUser: () => dispatch(fetchUser())
 })
 
 export default connect(

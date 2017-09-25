@@ -10,14 +10,14 @@ class PostForm extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       uploadedFileCloudinaryUrl: "",
       post: {
         content: "",
         title: "",
         body: "",
-        url: "",
-        author: this.props.current_user
+        url: ""
       }
     };
 
@@ -68,7 +68,8 @@ class PostForm extends React.Component {
           uploadedFileCloudinaryUrl: response.body.secure_url,
           post: merge(
             {}, this.state.post, {
-              url: response.body.secure_url,
+              content: "img",
+              url: response.body.secure_url
             }
           )
         });
