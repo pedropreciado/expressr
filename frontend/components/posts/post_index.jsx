@@ -11,9 +11,10 @@ class PostIndex extends React.Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
       modalIsOpen: false,
-      formType: ""
+      formType: "",
     }
 
     this.openModel = this.openModel.bind(this);
@@ -70,6 +71,9 @@ class PostIndex extends React.Component {
                 post={post}
                 deletePost={this.props.deletePost}
                 currentUser={this.props.currentUser}
+                likePost={this.props.likePost}
+                unlikePost={this.props.unlikePost}
+                currentUserLikes={post.current_user_likes}
                 />
             ))
           }

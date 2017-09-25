@@ -1,54 +1,87 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-const options = (post, body, author, currentUser, deletePost) => {
+const options = (props) => {
 
-  if (author == currentUser) {
+
+  if (props.post.author.id == props.currentUser.id) {
+
     return (
       <div className="post-options-match">
-        <a>{body}</a>
+        <a>{props.post.body}</a>
+        <a>{props.post.likes} likes</a>
         <div id="edit-delete">
           <a>{"edit"}</a>
-          <button onClick={() => deletePost(post.id)}>delete</button>
+          <button onClick={() => props.deletePost(props.post.id)}>delete</button>
         </div>
       </div>
     )
   } else {
     return (
     <div className="post-options-other">
-      <a>{body}</a>
+      <a>{props.post.body}</a>
+      <a>{props.post.likes} likes</a>
     </div>
   )
   }
   closeModal;
 }
 
-const postContent = (post) => {
 
-  if (post.content === "text") {
+
+const postContent = (props) => {
+
+  let likeSetting = () => props.likePost(props.post.id);
+  if (props.post.current_user_likes) {
+    likeSetting = () => props.unlikePost(props.post.id);
+  }
+
+  if (props.post.content === "text") {
+
     return (
+    <div className="content-container">
       <div className="item-content-text">
-        {post.body}
+        {props.post.body}
       </div>
-    )} else if (post.content === "img") {
+      <div onClick={likeSetting} className="overlay">
+        <p>click to {() => likes(props.post.current_user_likes)}.</p>
+        </ div>
+    </ div>
+
+
+
+    )} else if (props.post.content === "img") {
       return (
-      <img className="post-img" src={post.url}/>
+    <div className="content-container">
+      <img className="post-img" src={props.post.url}/>
+      <div onClick={likeSetting} className="overlay">
+        <p>click to {() => likes(props.post.current_user_likes)}.</p>
+        </ div>
+    </ div>
     )
     }
   }
 
-const PostIndexItem = ({post, currentUser, deletePost}) => {
+const likes = (currentUserLikes) => {
+  if (currentUserLikes === true) {
+    return ("unlike")
+  } else {
+    return ("like")
+  }
+}
+
+const PostIndexItem = (props) => {
   return (
     <div className="item-container">
 
       <div className="item-header">
-        <a>{post.author.username}</a>
-        <a>{post.title}</a>
+        <a>{props.post.author.username}</a>
+        <a>{props.post.title}</a>
       </ div>
 
-        {postContent(post)}
+        {postContent(props)}
 
-        {options(post, post.body, post.author.username, currentUser.username, deletePost)}
+        {options(props)}
     </div>
   )
 }

@@ -25,6 +25,14 @@ export const deletePost = post => dispatch => (
   PostApiUtil.deletePost(post).then(post => dispatch(removePost(post)))
 );
 
+export const likePost = (id) => dispatch => (
+  PostApiUtil.likePost(id).then((post) => dispatch(receivePost(post)))
+)
+
+export const unlikePost = (id) => dispatch => (
+  PostApiUtil.unlikePost(id).then((post) => dispatch(receivePost(post)))
+)
+
 const receiveAllPosts = posts => ({
   type: RECEIVE_ALL_POSTS,
   posts
