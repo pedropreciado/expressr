@@ -99,6 +99,7 @@ input.submit {
 
 input.submit:hover {
   background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
 }
 
 button.post-form-button {
