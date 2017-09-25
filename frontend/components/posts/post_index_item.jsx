@@ -44,7 +44,7 @@ const postContent = (props) => {
         {props.post.body}
       </div>
       <div onClick={likeSetting} className="overlay">
-        <p>click to {() => likes(props.post.current_user_likes)}.</p>
+        {likes(props.post.current_user_likes)}
         </ div>
     </ div>
 
@@ -55,7 +55,7 @@ const postContent = (props) => {
     <div className="content-container">
       <img className="post-img" src={props.post.url}/>
       <div onClick={likeSetting} className="overlay">
-        <p>click to {() => likes(props.post.current_user_likes)}.</p>
+        {likes(props.post.current_user_likes)}
         </ div>
     </ div>
     )
@@ -64,9 +64,13 @@ const postContent = (props) => {
 
 const likes = (currentUserLikes) => {
   if (currentUserLikes === true) {
-    return ("unlike")
+    return (
+      <p>click to unlike.</ p>
+    )
   } else {
-    return ("like")
+    return (
+      <p>click to like.</ p>
+    )
   }
 }
 

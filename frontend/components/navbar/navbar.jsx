@@ -20,7 +20,6 @@ const displayLinks = () => (
 const NavBar = ({currentUser, logout, fetchUser }) => {
   return (
     <div>
-    <SearchBar fetchUser={fetchUser}/>
     {currentUser ? displayName(currentUser, logout) : displayLinks()}
   </div>
   )
