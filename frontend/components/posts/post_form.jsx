@@ -90,10 +90,11 @@ class PostForm extends React.Component {
     });
   }
 
-  formHeader(edit) {
+  formHeader(edit, formType) {
+    formType === "img" ? formType = "image fields" : formType = "title and body"
     if (edit) {
       return (
-        <h2 id="form-header">edit text.</h2>
+        <h2 id="form-header">edit {formType}.</h2>
 
       )
     } else {
@@ -134,7 +135,7 @@ class PostForm extends React.Component {
       return (
         <div className="post-form-container">
           <form onSubmit={this.handleSubmit} className="modal-form">
-            <h2 id="form-header">upload an image.</h2>
+            {this.formHeader(edit, formType)}
 
               <input type="text"
                 value={this.state.post.title}
