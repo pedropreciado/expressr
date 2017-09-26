@@ -5,7 +5,6 @@ const options = (props) => {
 
 
   if (props.post.author.id == props.currentUser.id) {
-    console.log(props.post);
     return (
       <div className="post-options-match">
         <a>{props.post.body}</a>
