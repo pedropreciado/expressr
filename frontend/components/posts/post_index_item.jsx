@@ -5,13 +5,13 @@ const options = (props) => {
 
 
   if (props.post.author.id == props.currentUser.id) {
-
+    console.log(props.post);
     return (
       <div className="post-options-match">
         <a>{props.post.body}</a>
         <a>{props.post.likes} likes</a>
         <div id="edit-delete">
-          <button onClick={() => props.handleClick("text", true, props.post)}>edit</ button>
+          <button onClick={() => props.handleClick(props.post.content, true, props.post)}>edit</ button>
           <button onClick={() => props.deletePost(props.post.id)}>delete</button>
         </div>
       </div>

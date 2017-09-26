@@ -130,7 +130,7 @@ class PostForm extends React.Component {
           </ form>
         </div>
       )
-    } else if (this.props.formType === "photo") {
+    } else if (this.props.formType === "img") {
       return (
         <div className="post-form-container">
           <form onSubmit={this.handleSubmit} className="modal-form">

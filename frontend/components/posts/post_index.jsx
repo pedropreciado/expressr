@@ -91,7 +91,7 @@ class PostIndex extends React.Component {
             <div onClick={() => this.handleClick("text")} className="new-post-button"id="text">
               text
             </div>
-            <div onClick={() => this.handleClick("photo")} className="new-post-button"id="photo">
+            <div onClick={() => this.handleClick("img")} className="new-post-button"id="photo">
               photo
             </div>
             <div onClick={() => this.handleClick("audio")} className="new-post-button"id="audio">
