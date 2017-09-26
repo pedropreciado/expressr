@@ -90,7 +90,21 @@ class PostForm extends React.Component {
     });
   }
 
-  postForm(formType) {
+  formHeader(edit) {
+    if (edit) {
+      return (
+        <h2 id="form-header">edit text.</h2>
+
+      )
+    } else {
+      return (
+        <h2 id="form-header">what are you thinking about.</h2>
+
+      )
+    }
+  }
+
+  postForm(formType, edit) {
 
 
     if (formType === "text") {
@@ -98,8 +112,7 @@ class PostForm extends React.Component {
       return (
         <div className="post-form-container" id="text-post-header">
           <form onSubmit={this.handleSubmit} className="modal-form">
-            <h2 id="form-header">what are you thinking about.</h2>
-
+            {this.formHeader(edit)}
               <input type="text"
                 value={this.state.post.title}
                 onChange={this.update("title", formType)}
@@ -164,7 +177,7 @@ class PostForm extends React.Component {
   render() {
     return (
       <div>
-      {this.postForm(this.props.formType)}
+      {this.postForm(this.props.formType, this.props.edit)}
     </div>
     )
   }
