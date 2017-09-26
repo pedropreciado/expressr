@@ -10,16 +10,24 @@ class PostForm extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      uploadedFileCloudinaryUrl: "",
-      post: {
+    let post;
+    if (props.oldPost) {
+      post = props.oldPost
+    } else {
+      post ={
         content: "",
         title: "",
         body: "",
         url: ""
       }
+    }
+    this.post = post;
+
+    this.state = {
+      uploadedFileCloudinaryUrl: "",
+      post: this.post
     };
+
 
     this.postForm = this.postForm.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +35,12 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createPost(this.state.post).then(() => this.props.history.push("/posts"))
+
+    if (this.props.oldPost) {
+      this.props.updatePost(this.state.post).then(() => this.props.history.push("/posts"))
+    } else {
+      this.props.createPost(this.state.post).then(() => this.props.history.push("/posts"))
+    }
     this.props.closeModal();
     window.location.reload();
   }

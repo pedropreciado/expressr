@@ -15,6 +15,13 @@ class PostIndex extends React.Component {
     this.state = {
       modalIsOpen: false,
       formType: "",
+      edit: false,
+      post: {
+        content: "",
+        title: "",
+        body: "",
+        url: ""
+      }
     }
 
     this.openModel = this.openModel.bind(this);
@@ -39,8 +46,8 @@ class PostIndex extends React.Component {
     this.props.fetchPosts();
   }
 
-  handleClick(formType) {
-    this.setState({ formType })
+  handleClick(formType, edit, post) {
+    this.setState({ formType, edit, post })
     this.openModel();
   }
 
@@ -61,7 +68,9 @@ class PostIndex extends React.Component {
           <button onClick={this.closeModal} id="close-button">close form.</button>
           <PostFormContainer
             formType={this.state.formType}
+            edit={this.state.edit}
             closeModal={this.closeModal}
+            oldPost={this.state.post}
             />
         </ Modal>
 
@@ -74,6 +83,7 @@ class PostIndex extends React.Component {
                 likePost={this.props.likePost}
                 unlikePost={this.props.unlikePost}
                 currentUserLikes={post.current_user_likes}
+                handleClick={this.handleClick}
                 />
             ))
           }

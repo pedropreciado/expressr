@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchPost: id => dispatch(fetchPost(id)),
     createPost: (post) => dispatch(createPost(post)),
-    updatePost: (post) => dispatch(update(post))
+    updatePost: (post) => dispatch(updatePost(post))
   };
 };
 
