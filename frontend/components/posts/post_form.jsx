@@ -31,6 +31,7 @@ class PostForm extends React.Component {
 
     this.postForm = this.postForm.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.dropzoneContent = this.dropzoneContent.bind(this);
   }
 
   handleSubmit(event) {
@@ -105,6 +106,17 @@ class PostForm extends React.Component {
     }
   }
 
+  dropzoneContent() {
+    if (this.state.uploadedFileCloudinaryUrl === '') {
+      return (
+        <p> drop an image or click to select a file to upload.</ p>
+      )} else {
+        return (
+        <p>upload completed.</p>
+      )
+    }
+  }
+
   postForm(formType, edit) {
 
 
@@ -144,13 +156,8 @@ class PostForm extends React.Component {
                 className="input"
                 />
 
-            <div>
-                {this.state.uploadedFileCloudinaryUrl === '' ? "" :
-                  <div>
-                    <img className="submitted-photo"
-                      src={this.state.uploadedFileCloudinaryUrl} />
-                  </div>}
-                </div>
+          <div id="submitted-image-container">
+
 
             <Dropzone
               multiple={false}
@@ -158,8 +165,9 @@ class PostForm extends React.Component {
               onDrop={this.onImageDrop.bind(this)}
               className="dropzone"
               >
-              <p> drop an image or click to select a file to upload.</ p>
+                {this.dropzoneContent}
                 </ Dropzone>
+              </div>
 
 
               <input type="text"
@@ -185,3 +193,10 @@ class PostForm extends React.Component {
 }
 
 export default PostForm;
+
+
+
+// {this.state.uploadedFileCloudinaryUrl === '' ? "" :
+//   <img className="submitted-photo"
+//     src={this.state.uploadedFileCloudinaryUrl} />
+// }
