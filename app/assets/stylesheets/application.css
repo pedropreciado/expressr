@@ -23,17 +23,20 @@ light-trail:
 */
 
 html {
-   /*background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");*/
-   background-image: url("https://static.pexels.com/photos/8892/pexels-photo.jpg");
    box-sizing: border-box;
    color: white;
-   background-color: black;
+   background-color: rgb(33, 33, 33);
    background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
    -webkit-background-size: cover;
    background-size: cover;
    height: 100%;
+}
+
+div.bg-image {
+  /*background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");*/
+
 }
 
 h3.currentUser {
@@ -117,6 +120,7 @@ button.post-form-button {
   box-sizing: border-box;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
 }
 
 .splash-links {
@@ -355,7 +359,6 @@ img.submitted-photo {
 .overlay {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
   font-size: 30px;
   position: absolute;
   bottom: 100%;

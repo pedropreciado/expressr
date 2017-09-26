@@ -20,5 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const root = document.getElementById("root");
 
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(
+    <div className="bg-image">
+    <Root store={store} />
+    </ div>
+    , root);
+
 });
