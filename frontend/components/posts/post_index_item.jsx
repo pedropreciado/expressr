@@ -38,7 +38,7 @@ const postContent = (props) => {
   if (props.post.content === "text") {
 
     return (
-    <div className="content-container">
+    <div>
       <div className="item-content-text">
         {props.post.body}
       </div>
@@ -51,7 +51,7 @@ const postContent = (props) => {
 
     )} else if (props.post.content === "img") {
       return (
-    <div className="content-container">
+    <div>
       <img className="post-img" src={props.post.url}/>
       <div onClick={likeSetting} className="overlay">
         {likes(props.post.current_user_likes)}

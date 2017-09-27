@@ -73,7 +73,7 @@ class PostIndex extends React.Component {
             oldPost={this.state.post}
             />
         </ Modal>
-
+        {console.log(this.props.posts)}
           {
             this.props.posts.map((post) => (
               <PostIndexItem
@@ -87,6 +87,7 @@ class PostIndex extends React.Component {
                 />
             ))
           }
+
           <div className="new-posts-container">
             <div onClick={() => this.handleClick("text")} className="new-post-button"id="text">
               text

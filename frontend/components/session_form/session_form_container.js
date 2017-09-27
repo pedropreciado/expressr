@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
-import { login, logout, signup } from '../../actions/session_actions';
+import { login, logout, signup, clearSessionErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
 const mapStateToProps = (state) => {
-  return {
+    return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors.session
   }
@@ -17,7 +17,9 @@ const mapDispatchToProps = (dispatch, { location }) => {
   const action = (formType === 'login') ? login : signup;
   return {
     action: (user) => dispatch(action(user)),
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
     formType
+
   };
 };
 

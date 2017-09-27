@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import SearchBar from "../search_bar/search_bar";
 
 
 const displayName = (currentUser, logout) => (
-  <navGroup className="nav-group">
-    <h3 className="currentUser">{currentUser.username}</h3>
-    <button onClick={logout}>logout</button>
-  </navGroup>
+
+      <navGroup className="nav-group">
+        <h3 className="currentUser">{currentUser.username}</h3>
+        <button onClick={logout}>logout</button>
+      </navGroup>
 )
 
 const displayLinks = () => (
@@ -19,7 +19,7 @@ const displayLinks = () => (
 
 const NavBar = ({currentUser, logout, fetchUser }) => {
   return (
-    <div>
+  <div>
     {currentUser ? displayName(currentUser, logout) : displayLinks()}
   </div>
   )

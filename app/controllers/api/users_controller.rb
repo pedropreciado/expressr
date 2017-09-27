@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = (User.all - [current_user] - [User.find_by(username: "guest")]).sample(5)
   end
 
   def show

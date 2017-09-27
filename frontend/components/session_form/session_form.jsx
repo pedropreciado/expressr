@@ -7,7 +7,6 @@ class SessionForm extends React.Component {
     super(props);
 
     this.state = {
-      errors: [],
       username: "",
       email: "",
       password: ""
@@ -23,12 +22,12 @@ class SessionForm extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState({errors: [newProps.errors]})
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.setState({errors: [newProps.errors]})
+  // }
 
-  componentWillMount() {
-    this.setState({errors: []})
+  componentDidMount() {
+    this.props.clearSessionErrors();
   }
 
   handleSubmit(event) {
@@ -40,7 +39,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {
-          this.state.errors.map((error) => (
+          this.props.errors.map((error) => (
             <li className="errors">{error}</li>
           ))
         }
@@ -69,7 +68,11 @@ class SessionForm extends React.Component {
       return (
         <input type="submit"
                 className="submit"
-                onClick={() => this.setState({username: "guest", email: "guest", password: 'thispassword'})}
+                onClick={() => this.setState({
+                  username: "guest",
+                  email: "guest",
+                  password: 'thispassword'
+                })}
                 value="guest login"/>
       )
     }
