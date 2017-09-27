@@ -1,16 +1,13 @@
 import React from "react";
 import { Link, withRouter} from "react-router-dom";
 
-const postContent = (post, likePost, unlikePost, current_user_likes) => {
-
-  console.log(post);
+const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
   console.log(current_user_likes);
 
   let likeSetting = () => likePost(post.id);
-  if (current_user_likes) {
+  if (current_user_likes === true) {
     likeSetting = () => unlikePost(post.id);
   }
-  console.log(likeSetting);
 
   if (post.content === "text") {
 
@@ -20,17 +17,15 @@ const postContent = (post, likePost, unlikePost, current_user_likes) => {
         <div onClick={likeSetting} className="overlay">
         {liker(current_user_likes)}
       </div>
-      {post.likes}
     </ div>
 
   )} else if (post.content === "img") {
       return (
     <div className="discover-content-container">
       <img className="discover-post-img" src={post.url}/>
-        <div onClick={likeSetting} className="overlay">
-      {liker(current_user_likes)}
-    </div>
-    {post.likes}
+          <div onClick={likeSetting} className="overlay">
+              {liker(current_user_likes)}
+            </div>
     </ div>
     )
   }
@@ -39,11 +34,11 @@ const postContent = (post, likePost, unlikePost, current_user_likes) => {
 const followStatus = (props) => {
   if (props.user.current_user_follows) {
     return (
-      <div className="update-button" onClick={() => props.unfollowUser(props.user.id) && window.location.reload()}>unfollow</div>
+      <div className="update-button" onClick={() => props.unfollowUser(props.user.id)}>unfollow</div>
     )
   } else {
     return (
-    <div className="update-button" onClick={() => props.followUser(props.user.id) && window.location.reload()}>follow</div>
+    <div className="update-button" onClick={() => props.followUser(props.user.id)}>follow</div>
     )
   }
 }
@@ -63,6 +58,7 @@ const liker = (currentUserLikes) => {
 const DiscoverItem = (props) => {
   console.log(props);
 
+
   return (
     <div  className="discover-posts-container">
 
@@ -72,30 +68,18 @@ const DiscoverItem = (props) => {
       </ div>
     <div>
       {
-        postContent(props.user.post.post, props.likePost, props.unlikePost, props.user.post.current_user_likes)
+        postContent(props.user.post.post,
+                    props.likePost,
+                    props.unlikePost,
+                    props.user.post.current_user_likes,
+                    props.user.post.likes)
       }
     </div>
-
-
+    <div className="post-options-other">
+      <a>{props.user.post.likes} likes</a>
+    </div>
     </div>
   )
 }
 
 export default withRouter(DiscoverItem);
-
-
-
-
-
-
-// <div className="item-header">
-//   <a>{props.user.username}</a>
-// </div>
-// <div className="user-posts-container">
-//   {
-//     props.posts.map((post) => (
-//       <div className="post-content">{postContent(post)}</div>
-//     ))
-//   }
-//   </ div>
-//   {options(props)}

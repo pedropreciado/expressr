@@ -63,10 +63,11 @@ li.errors {
 
 .nav-header {
   display: flex;
+  color: black;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: .5px solid white;
   background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: .25px solid rgb(33, 33, 33);
 }
 
 #discover-link {
@@ -172,7 +173,7 @@ form {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
   transition: .5s;
-
+  color: white;
 }
 
 
@@ -255,8 +256,7 @@ div.post-options-other {
 
 .nav-SessionLinks {
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 20px;
+  flex-flow: row;
 }
 
 input {
@@ -264,8 +264,13 @@ input {
   color: white;
   border: none;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: none;
+  border: .25px solid white;
   margin: 5px;
+}
+
+input::-webkit-input-placeholder {
+color: rgba(255, 255, 255, .5) !important;
 }
 
 #edit-delete {
@@ -397,9 +402,15 @@ img.submitted-photo {
   width: 100%;
 }
 
-.discover-content-container{
+.discover-content-container {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  left: 0;
+  right: 0;
 }
 
 .content-container:hover .overlay{
@@ -439,6 +450,7 @@ img.submitted-photo {
 .discover-posts-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 199px;
   min-width: 199px;
   max-height: 199px;
