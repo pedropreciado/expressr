@@ -2,7 +2,6 @@ import React from "react";
 import { Link, withRouter} from "react-router-dom";
 
 const postContent = (post, likePost, unlikePost) => {
-  console.log(post);
   let likeSetting = () => likePost(post.id);
   if (post.current_user_likes) {
     likeSetting = () => unlikePost(post.id);
@@ -58,6 +57,7 @@ const likes = (currentUserLikes) => {
 
 const DiscoverItem = (props) => {
   console.log(props);
+
   return (
     <div  className="discover-posts-container">
 
@@ -67,9 +67,7 @@ const DiscoverItem = (props) => {
       </ div>
     <div>
       {
-        props.user.posts.map((post) =>
-        postContent(post)
-      )
+        postContent(props.user.post.post, props.likePost, props.unlikePost)
       }
     </div>
 

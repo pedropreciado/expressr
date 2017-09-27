@@ -21,6 +21,8 @@ class Discover extends React.Component {
                 user={user}
                 followUser={this.props.followUser}
                 unfollowUser={this.props.unfollowUser}
+                likePost={this.props.likePost}
+                unlikePost={this.props.unlikePost}
                 />
             ))
           }
