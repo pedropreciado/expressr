@@ -24,8 +24,8 @@ light-trail:
 
 html {
    box-sizing: border-box;
-   color: white;
-   background-color: rgb(33, 33, 33);
+   color: rgb(33, 33, 33);
+   background-color: white;
    background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
@@ -41,6 +41,7 @@ div.bg-image {
 
 h3.currentUser {
   font-weight: 200;
+  color: white;
 }
 
 div.splash-link-container {
@@ -195,7 +196,15 @@ ul.post-index, ul.user-index{
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  width: 50%;
+  width: 70%;
+}
+
+ul.user-index {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 
@@ -215,8 +224,8 @@ div.item-header {
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  border-left: .25px solid white;
-  border-top: .25px solid white;
+  border-left: .25px solid rgb(33, 33, 33);
+  border-top: .25px solid rgb(33, 33, 33);
   height: auto;
   /*background-color: rgba(0, 0, 0, 0.2);*/
 
@@ -227,9 +236,9 @@ div.post-options-match {
   justify-content: space-between;
   padding: 5px;
   background: none;
-  margin-top: 0;
-  border-bottom: .25px solid white;
-  border-right: .25px solid white;
+
+  border-bottom: .25px solid rgb(33, 33, 33);
+  border-right: .25px solid rgb(33, 33, 33);
   /*background-color: rgba(0, 0, 0, 0.2);*/
 
 }
@@ -238,8 +247,9 @@ div.post-options-other {
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  border-bottom: .25px solid white;
-  border-right: .25px solid white;
+  margin-bottom: 1px;
+  border-bottom: .25px solid rgb(33, 33, 33);
+  border-right: .25px solid rgb(33, 33, 33);
 
 }
 
@@ -281,7 +291,7 @@ div.new-posts-container {
   justify-content: space-around;
   width: 60%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 img.submitted-photo {
@@ -314,6 +324,7 @@ img.submitted-photo {
 
 
 .new-post-button {
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,8 +333,8 @@ img.submitted-photo {
 }
 
 .new-post-button:hover {
-  border-bottom: .5px solid white;
-  background-color: rgba(0,0,0,0.8);
+  border-bottom: .5px solid rgb(33, 33, 33);
+  background-color: rgba(0,0,0,0.4);
   cursor: pointer;
 }
 
@@ -333,6 +344,7 @@ img.submitted-photo {
     margin: 0 auto;
     margin: 0 auto;
     padding: 10px;
+    color: white;
  }
 
  .modal-form {
@@ -389,6 +401,7 @@ img.submitted-photo {
   bottom: 0;
   height: 100%;
   cursor: pointer;
+  color: white;
 }
 
 #edit-delete {
@@ -400,49 +413,45 @@ img.submitted-photo {
 
 .update-button {
   display: inline-block;
-  color: white;
+  color: rgb(33, 33, 33);
   text-decoration: none;
   padding: 1px;
 }
 
 .update-button:hover {
-  border-bottom: .25px solid white;
+  border-bottom: .25px solid rgb(33, 33, 33);
   cursor: pointer;
 
 }
 
 .discover-posts-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: space-around;
-  min-height: 300px;
+  flex-direction: column;
+  min-height: 199px;
+  min-width: 199px;
+  max-height: 199px;
+  max-width: 199px;
+  margin: 20px;
 }
 
-.content-container {
+.discover-content-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  margin: 3px;
-  min-height: 200px;
-  max-height: 200px;
-  width: 40%;
-  height: 40%;
+  min-height: 100px;
 }
 
 .discover-item-header {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
-  border-left: .25px solid white;
-  border-top: .25px solid white;
-  height: auto;
-  font-size: 30px;
+  text-align: center;
+  font-size: 15px;
+  border-top: .25px solid rgb(33, 33, 33);
+  border-left: .25px solid rgb(33, 33, 33);
+  padding-left: 5px;
 }
 
 .discover-post-img {
-  height: 100%;
-  width: 100%;
+  max-width:100%;
+  max-height: 150px;;
 }
