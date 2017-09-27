@@ -392,12 +392,12 @@ img.submitted-photo {
 
 }
 
-.content-container {
+.content-container, .discover-content-container{
   position: relative;
   width: 100%;
 }
 
-.content-container:hover .overlay{
+.content-container:hover, .discover-content-container:hover .overlay{
   bottom: 0;
   height: 100%;
   cursor: pointer;

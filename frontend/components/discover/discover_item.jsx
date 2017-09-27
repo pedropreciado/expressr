@@ -1,11 +1,16 @@
 import React from "react";
 import { Link, withRouter} from "react-router-dom";
 
-const postContent = (post, likePost, unlikePost) => {
+const postContent = (post, likePost, unlikePost, current_user_likes) => {
+
+  console.log(post);
+  console.log(current_user_likes);
+
   let likeSetting = () => likePost(post.id);
-  if (post.current_user_likes) {
+  if (current_user_likes) {
     likeSetting = () => unlikePost(post.id);
   }
+  console.log(likeSetting);
 
   if (post.content === "text") {
 
@@ -13,7 +18,7 @@ const postContent = (post, likePost, unlikePost) => {
     <div className="discover-content-container">
         {post.body}
         <div onClick={likeSetting} className="overlay">
-        {likes(post.current_user_likes)}
+        {liker(current_user_likes)}
       </div>
       {post.likes}
     </ div>
@@ -23,7 +28,7 @@ const postContent = (post, likePost, unlikePost) => {
     <div className="discover-content-container">
       <img className="discover-post-img" src={post.url}/>
         <div onClick={likeSetting} className="overlay">
-      {likes(post.current_user_likes)}
+      {liker(current_user_likes)}
     </div>
     {post.likes}
     </ div>
@@ -43,7 +48,7 @@ const followStatus = (props) => {
   }
 }
 
-const likes = (currentUserLikes) => {
+const liker = (currentUserLikes) => {
   if (currentUserLikes === true) {
     return (
       <p>click to unlike.</ p>
@@ -67,7 +72,7 @@ const DiscoverItem = (props) => {
       </ div>
     <div>
       {
-        postContent(props.user.post.post, props.likePost, props.unlikePost)
+        postContent(props.user.post.post, props.likePost, props.unlikePost, props.user.post.current_user_likes)
       }
     </div>
 
