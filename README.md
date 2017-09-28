@@ -7,6 +7,7 @@ expressr is a full stack web application built with Ruby on Rails, React and Red
 ## Features and Implementation
 
 ### Posts
+
 Users can upload images or write out their thoughts to be seen by their followers. expressr was inspired by minimally-designed websites such as Instagram, and Digg, where visual content is the main focus.
 
 ![](https://raw.githubusercontent.com/pedropreciado/expressr/master/docs/screenshots/pug.png)
@@ -19,4 +20,4 @@ Using the `react-modal` library, users can post content using a form that won't 
 
 ![](https://raw.githubusercontent.com/pedropreciado/expressr/master/docs/screenshots/discover.png)
 
-The Discover page allows users to explore other users' posts on expressr. Users are displayed randomly, along with one of their posts. Here is where the current user
+The Discover page allows users to explore other users' posts on expressr. Users are displayed randomly, along with one of their posts.
