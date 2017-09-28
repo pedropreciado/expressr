@@ -25,13 +25,13 @@ const App = () => (
       <NavBarContainer />
     </header>
     <Switch>
-
-      <ProtectedRoute exact path="/" component={Splash} />
-      <AuthRoute exact path="/" component={PostIndexContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <ProtectedRoute path="/discover" component={DiscoverContainer}/>
-      <ProtectedRoute path="/posts" component={PostIndexContainer}/>
+      <Switch>
+        <ProtectedRoute path="/" component={PostIndexContainer}/>
+        <Route exact path="/" component={SessionFormContainer} />
+      </ Switch>
     </ Switch>
   </div>
 
