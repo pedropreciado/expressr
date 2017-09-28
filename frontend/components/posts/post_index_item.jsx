@@ -27,8 +27,6 @@ const options = (props) => {
 }
 
 const likeCount = (post) => {
-  console.log(post);
-
   if (post.current_user_likes) {
     return (
       <a>{post.likes - 1} &#9825; + yours</a>
