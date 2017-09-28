@@ -8,7 +8,7 @@ const options = (props) => {
     return (
       <div className="post-options-match">
         <a>{props.post.body}</a>
-        <a>{props.post.likes} &#9825;</a>
+        {likeCount(props.post)}
         <div id="edit-delete">
           <div onClick={() => props.handleClick(props.post.content, true, props.post)}  className="update-button" id="edit">edit</ div>
           <div onClick={() => props.deletePost(props.post.id)} className="update-button" id="delete">delete</div>
@@ -19,14 +19,26 @@ const options = (props) => {
     return (
     <div className="post-options-other">
       <a>{props.post.body}</a>
-      <a>{props.post.likes} &#9825;</a>
+      {likeCount(props.post)}
     </div>
   )
   }
   closeModal;
 }
 
+const likeCount = (post) => {
+  console.log(post);
 
+  if (post.current_user_likes) {
+    return (
+      <a>{post.likes - 1} &#9825; + yours</a>
+    )
+  } else {
+    return (
+      <a>{post.likes} &#9825;</a>
+    )
+  }
+}
 
 const postContent = (props) => {
 

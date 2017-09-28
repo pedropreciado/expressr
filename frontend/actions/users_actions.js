@@ -14,11 +14,11 @@ export const fetchUsers = () => dispatch => (
 );
 
 export const followUser = (followee_id) => dispatch => (
-  UserApiUtil.followUser(followee_id).then((user) => dispatch(receiveUsers(user)))
+  UserApiUtil.followUser(followee_id).then((user) => dispatch(receiveUser(user)))
 
 )
 export const unfollowUser = (followee_id) => dispatch => (
-  UserApiUtil.unfollowUser(followee_id).then((user) => dispatch(receiveUsers(user)))
+  UserApiUtil.unfollowUser(followee_id).then((user) => dispatch(receiveUser(user)))
 )
 
 const receiveFollow = (user) => ({
