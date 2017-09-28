@@ -4,7 +4,6 @@ import DiscoverItem from "./discover_item";
 class Discover extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   componentDidMount() {

@@ -25,7 +25,6 @@ const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
 }
 
 const followStatus = (props) => {
-  console.log(props.user.post.current_user_likes);
   if (props.user.current_user_follows) {
     return (
       <div className="update-button" onClick={() => props.unfollowUser(props.user.id)}>unfollow</div>
@@ -50,7 +49,6 @@ const liker = (currentUserLikes) => {
 }
 
 const DiscoverItem = (props) => {
-  console.log(props);
 
 
   return (

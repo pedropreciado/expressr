@@ -3,7 +3,6 @@ class Api::FollowsController < ApplicationController
     @follow = Follow.new
     @follow.followee_id = params[:followee_id]
     @follow.follower_id = current_user.id
-    puts @follow
     if @follow.save
       @user = User.find_by(params[:id])
       render "api/users/show", user: @user
@@ -13,7 +12,6 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    puts params
     @follow = Follow.find_by(followee_id: params[:id])
     @follow.follower_id = current_user.id
     @follow.destroy!

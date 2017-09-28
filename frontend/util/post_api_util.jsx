@@ -36,7 +36,6 @@ export const deletePost = (id) => {
 }
 
 export const likePost = (id) => {
-  console.log(id);
   return $.ajax({
     method: "POST",
     url: `/api/likes`,
@@ -45,7 +44,6 @@ export const likePost = (id) => {
 }
 
 export const unlikePost = (id) => {
-  console.log(id);
   return $.ajax({
     method: "DELETE",
     url: `/api/likes/${id}`

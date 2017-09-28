@@ -2,7 +2,6 @@ import { RECEIVE_USER,  RECEIVE_USERS, RECEIVE_LIKE, REMOVE_LIKE } from "../acti
 import merge from "lodash/merge";
 
 const UsersReducer = (oldState = {}, action) => {
-  console.log(oldState);
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_USER:
