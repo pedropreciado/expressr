@@ -18,7 +18,13 @@ const UsersReducer = (oldState = {}, action) => {
     case REMOVE_LIKE:
       return merge({}, oldState, action);
     case RECEIVE_FOLLOW:
-      return merge({}, oldState, action)
+      let newState =  merge({}, oldState, action);
+      console.log(newState);
+      return newState
+    case REMOVE_FOLLOW:
+      let thisState =  merge({}, oldState, action);
+      console.log(thisState);
+      return thisState
     default:
     return oldState;
   }

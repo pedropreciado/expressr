@@ -7,7 +7,7 @@ json.post do
   json.likes post.likes.count
 end
 
-json.followers user.followers
+json.followers user.followers.map {|follow| follow.follower_id}
 
 
 json.current_user_follows !!user.followers.find_by(follower_id: current_user.id)

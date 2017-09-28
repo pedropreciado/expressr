@@ -25,17 +25,8 @@ const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
 }
 
 const followStatus = (props) => {
-  let included = false;
-  console.log(props.user.followers);
-  props.user.followers.forEach((follow) => {
-    if (follow.follower_id === props.currentUser.id) {
-      included = true;
-    }}
-  )
 
-  console.log(included);
-
-  if (included) {
+  if (props.user.followers.includes(props.currentUser.id)) {
     return (
       <div className="update-button" onClick={() => props.unfollowUser(props.user.id)}>unfollow</div>
     )
@@ -59,7 +50,6 @@ const liker = (currentUserLikes) => {
 }
 
 const DiscoverItem = (props) => {
-
 
   return (
     <div  className="discover-posts-container">

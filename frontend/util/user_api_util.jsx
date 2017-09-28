@@ -13,8 +13,6 @@ export const fetchUsers = () => {
 }
 
 export const followUser = (followee_id) => {
-  console.log("followed: id");
-  console.log(followee_id);
   return $.ajax({
     method: "POST",
     url: "/api/follows",
@@ -23,8 +21,6 @@ export const followUser = (followee_id) => {
 }
 
 export const unfollowUser = (followee_id) => {
-  console.log("unfollow id:");
-  console.log(followee_id);
   return $.ajax({
     method: "DELETE",
     url: `api/follows/${followee_id}`
