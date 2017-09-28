@@ -299,8 +299,8 @@ div.post-options-other {
 
 input {
   font-size: 20px;
-  font-weight: 100;
-  color: rgb(33, 33, 33);
+  font-weight: 200;
+  color: black;
   padding: 10px;
   background: none;
   border: .25px solid rgb(33, 33, 33);
