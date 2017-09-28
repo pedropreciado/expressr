@@ -79,7 +79,6 @@ class PostIndex extends React.Component {
             oldPost={this.state.post}
             />
         </ Modal>
-        {console.log(this.props.posts)}
           {
             this.props.posts.map((post) => (
               <PostIndexItem

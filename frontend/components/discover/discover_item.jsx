@@ -68,9 +68,6 @@ const DiscoverItem = (props) => {
     </div>
     <div className="post-options-other">
       <a>{props.user.post.likes} &#9825;</a>
-      <a>{props.user.id}</a>
-      <a>{props.user.post.id}</a>
-
     </div>
     </div>
   )

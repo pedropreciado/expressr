@@ -7,10 +7,6 @@ import { RECEIVE_USER,
 import merge from "lodash/merge";
 
 const UsersReducer = (oldState = {}, action) => {
-  console.log("action");
-  console.log(action);
-  console.log("oldState");
-  console.log(oldState);
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_USER:
@@ -29,7 +25,6 @@ const UsersReducer = (oldState = {}, action) => {
       return dookie
     case REMOVE_FOLLOW:
       let thisState =  merge({}, oldState, action);
-      console.log(thisState);
       return thisState;
     default:
     return oldState;

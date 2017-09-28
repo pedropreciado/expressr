@@ -13,7 +13,6 @@ export const fetchUsers = () => {
 }
 
 export const followUser = (followee_id) => {
-  console.log(followee_id);
   return $.ajax({
     method: "POST",
     url: "/api/follows",
