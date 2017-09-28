@@ -56,8 +56,14 @@ class PostIndex extends React.Component {
     return (
       <div>
 
+
         <ul className="post-index">
 
+          <Link to="/discover">
+            <div id="discover-link">
+              discover more.
+            </div>
+          </Link>
 
         <Modal
           isOpen={this.state.modalIsOpen}

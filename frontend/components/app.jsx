@@ -22,11 +22,6 @@ const App = () => (
           </ button>
       </Link>
     </h3>
-    <Link to="/discover">
-      <div id="discover-link">
-        discover.
-      </div>
-    </Link>
       <NavBarContainer />
     </header>
     <Switch>

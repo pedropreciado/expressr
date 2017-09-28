@@ -67,17 +67,24 @@ li.errors {
   border-bottom: .25px solid rgb(33, 33, 33);
 }
 
-#discover-link {
-  color: white;
+#discover-link, #home-link {
+  color: black;
   float: right;
-  margin-top: 15%;
-  font-size: 30px;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-#discover-link:hover {
+#discover-link:hover, #home-link:hover {
   border-bottom: .25px solid white;
   transition: .5s;
 }
+
+#home-link {
+  width: 100%;
+  text-align: center;
+}
+
 
 footer {
   display: flex;
@@ -339,9 +346,10 @@ img.submitted-photo {
 }
 
 .new-post-button:hover {
-  border-bottom: .5px solid rgb(33, 33, 33);
-  background-color: rgba(0,0,0,0.4);
+  /*border-bottom: .5px solid rgb(33, 33, 33);*/
+  background-color: rgba(0,0,0,0.2);
   cursor: pointer;
+  transition: .5s;
 }
 
 #form-header {

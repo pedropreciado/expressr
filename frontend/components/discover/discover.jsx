@@ -1,5 +1,6 @@
 import React from "react";
 import DiscoverItem from "./discover_item";
+import { Link } from "react-router-dom";
 
 class Discover extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Discover extends React.Component {
     return (
       <div>
         <ul className="user-index">
+
           {
             this.props.users.map((user) => (
               <DiscoverItem
@@ -28,6 +30,13 @@ class Discover extends React.Component {
             ))
           }
         </ul>
+
+        <Link to="/posts">
+          <div id="home-link">
+            return home.
+          </div>
+        </Link>
+
         </ div>
     )
   }
