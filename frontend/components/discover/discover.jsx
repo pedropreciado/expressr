@@ -4,6 +4,7 @@ import DiscoverItem from "./discover_item";
 class Discover extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {
@@ -22,6 +23,7 @@ class Discover extends React.Component {
                 unfollowUser={this.props.unfollowUser}
                 likePost={this.props.likePost}
                 unlikePost={this.props.unlikePost}
+                currentUser = {this.props.currentUser}
                 />
             ))
           }
