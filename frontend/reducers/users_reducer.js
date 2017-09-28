@@ -7,24 +7,30 @@ import { RECEIVE_USER,
 import merge from "lodash/merge";
 
 const UsersReducer = (oldState = {}, action) => {
+  console.log("action");
+  console.log(action);
+  console.log("oldState");
+  console.log(oldState);
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, oldState, {[action.user.id]: action.user});
+      let newState = merge({}, oldState, {[action.user.id]: action.user})
+      newState[action.user.id].followers = action.user.followers;
+      return newState;
     case RECEIVE_USERS:
       return merge({}, action.users);
     case RECEIVE_LIKE:
       return merge({}, oldState, action);
     case REMOVE_LIKE:
       return merge({}, oldState, action);
-    case RECEIVE_FOLLOW:
-      let newState =  merge({}, oldState, action);
-      console.log(newState);
-      return newState
+    case REMOVE_FOLLOW:
+      let dookie = merge({}, oldState);
+      delete dookie[action.user.id].followers[oldState.session.currentUser.id]
+      return dookie
     case REMOVE_FOLLOW:
       let thisState =  merge({}, oldState, action);
       console.log(thisState);
-      return thisState
+      return thisState;
     default:
     return oldState;
   }

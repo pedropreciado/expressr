@@ -25,7 +25,6 @@ const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
 }
 
 const followStatus = (props) => {
-
   if (props.user.followers.includes(props.currentUser.id)) {
     return (
       <div className="update-button" onClick={() => props.unfollowUser(props.user.id)}>unfollow</div>
@@ -69,6 +68,9 @@ const DiscoverItem = (props) => {
     </div>
     <div className="post-options-other">
       <a>{props.user.post.likes} &#9825;</a>
+      <a>{props.user.id}</a>
+      <a>{props.user.post.id}</a>
+
     </div>
     </div>
   )

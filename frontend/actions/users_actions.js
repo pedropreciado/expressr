@@ -23,6 +23,7 @@ export const unfollowUser = (followee_id) => dispatch => (
 
 const receiveFollow = (user) => ({
   type: RECEIVE_FOLLOW,
+  followers: user.followers,
   user
 })
 
