@@ -8,7 +8,7 @@ const options = (props) => {
     return (
       <div className="post-options-match">
         <a>{props.post.body}</a>
-        <a>{props.post.likes} likes</a>
+        <a>{props.post.likes} &#9825;</a>
         <div id="edit-delete">
           <div onClick={() => props.handleClick(props.post.content, true, props.post)} className="update-button">edit</ div>
           <div onClick={() => props.deletePost(props.post.id)} className="update-button">delete</div>
@@ -19,7 +19,7 @@ const options = (props) => {
     return (
     <div className="post-options-other">
       <a>{props.post.body}</a>
-      <a>{props.post.likes} likes</a>
+      <a>{props.post.likes} &#9825;</a>
     </div>
   )
   }

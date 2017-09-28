@@ -2,7 +2,6 @@ import React from "react";
 import { Link, withRouter} from "react-router-dom";
 
 const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
-  console.log(current_user_likes);
 
   let likeSetting = () => likePost(post.id);
   if (current_user_likes === true) {
@@ -14,24 +13,19 @@ const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
     return (
     <div className="discover-content-container">
         {post.body}
-        <div onClick={likeSetting} className="overlay">
-        {liker(current_user_likes)}
-      </div>
     </ div>
 
   )} else if (post.content === "img") {
       return (
     <div className="discover-content-container">
       <img className="discover-post-img" src={post.url}/>
-          <div onClick={likeSetting} className="overlay">
-              {liker(current_user_likes)}
-            </div>
     </ div>
     )
   }
 }
 
 const followStatus = (props) => {
+  console.log(props.user.post.current_user_likes);
   if (props.user.current_user_follows) {
     return (
       <div className="update-button" onClick={() => props.unfollowUser(props.user.id)}>unfollow</div>
@@ -76,10 +70,20 @@ const DiscoverItem = (props) => {
       }
     </div>
     <div className="post-options-other">
-      <a>{props.user.post.likes} likes</a>
+      <a>{props.user.post.likes} &#9825;</a>
     </div>
     </div>
   )
 }
 
 export default withRouter(DiscoverItem);
+
+
+// <div onClick={likeSetting} className="overlay">
+//   {liker(current_user_likes)}
+// </div>
+
+
+// <div onClick={likeSetting} className="overlay">
+//     {liker(current_user_likes)}
+//   </div>

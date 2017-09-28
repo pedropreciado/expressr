@@ -34,17 +34,14 @@ html {
    height: 100%;
 }
 
-div.bg-image {
-  /*background-image: url("https://static.pexels.com/photos/403575/pexels-photo-403575.jpeg");*/
-
-}
-
 h3.currentUser {
   font-weight: 200;
   color: white;
+  padding-right: 10px;
 }
 
 div.splash-link-container {
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +74,11 @@ li.errors {
   font-size: 30px;
 }
 
+#discover-link:hover {
+  border-bottom: .25px solid white;
+  transition: .5s;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -100,6 +102,7 @@ button {
 
 button:hover {
   cursor: pointer;
+  color: grey;
 }
 
 input.submit {
@@ -114,9 +117,7 @@ input.submit:hover {
   cursor: pointer;
 }
 
-button.post-form-button {
-  background-color: cyan;
-}
+
 
 .splash-link-container {
   margin-top: 150px;
@@ -197,7 +198,7 @@ ul.post-index, ul.user-index{
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  width: 70%;
+  width: 80%;
 }
 
 ul.user-index {

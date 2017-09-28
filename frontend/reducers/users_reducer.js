@@ -2,6 +2,7 @@ import { RECEIVE_USER,  RECEIVE_USERS, RECEIVE_LIKE, REMOVE_LIKE } from "../acti
 import merge from "lodash/merge";
 
 const UsersReducer = (oldState = {}, action) => {
+  console.log(oldState);
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_USER:
@@ -11,7 +12,9 @@ const UsersReducer = (oldState = {}, action) => {
     case RECEIVE_LIKE:
       return merge({}, oldState, action)
     case REMOVE_LIKE:
-      return merge({}, oldState, action)
+      let newState = merge({}, oldState);
+      newState[action.post.id.current_user_likes] = !action.post.id.current_user_likes;
+      return newState;
     default:
     return oldState;
   }
