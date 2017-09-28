@@ -29,13 +29,13 @@ class Discover extends React.Component {
                 />
             ))
           }
+          <Link to="/posts" >
+            <div id="home-link">
+              return home.
+            </div>
+          </Link>
         </ul>
 
-        <Link to="/posts">
-          <div id="home-link">
-            return home.
-          </div>
-        </Link>
 
         </ div>
     )

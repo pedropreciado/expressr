@@ -10,8 +10,8 @@ const options = (props) => {
         <a>{props.post.body}</a>
         <a>{props.post.likes} &#9825;</a>
         <div id="edit-delete">
-          <div onClick={() => props.handleClick(props.post.content, true, props.post)} className="update-button">edit</ div>
-          <div onClick={() => props.deletePost(props.post.id)} className="update-button">delete</div>
+          <div onClick={() => props.handleClick(props.post.content, true, props.post)}  className="update-button" id="edit">edit</ div>
+          <div onClick={() => props.deletePost(props.post.id)} className="update-button" id="delete">delete</div>
         </div>
       </div>
     )

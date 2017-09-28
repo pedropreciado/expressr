@@ -133,7 +133,8 @@ class PostForm extends React.Component {
                 className="input"
                 />
 
-              <input type="text"
+              <textarea
+                className="textarea"
                 value={this.state.post.body}
                 onChange={this.update("body")}
                 placeholder="body"

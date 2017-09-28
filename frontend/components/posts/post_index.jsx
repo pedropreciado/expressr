@@ -110,14 +110,3 @@ class PostIndex extends React.Component {
 }
 
 export default PostIndex;
-
-
-// <div onClick={() => this.handleClick("audio")} className="new-post-button"id="audio">
-//   audio
-// </div>
-// <div onClick={() => this.handleClick("link")} className="new-post-button"id="link">
-//   link
-// </div>
-// <div onClick={() => this.handleClick("video")} className="new-post-button"id="video">
-//   video
-// </div>

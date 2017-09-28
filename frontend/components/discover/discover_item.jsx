@@ -27,11 +27,11 @@ const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
 const followStatus = (props) => {
   if (props.user.followers.includes(props.currentUser.id)) {
     return (
-      <div className="update-button" onClick={() => props.unfollowUser(props.user.id)}>unfollow</div>
+      <div className="update-button" id="edit" onClick={() => props.unfollowUser(props.user.id)}>unfollow</div>
     )
   } else {
     return (
-    <div className="update-button" onClick={() => props.followUser(props.user.id)}>follow</div>
+    <div className="update-button" id="edit" onClick={() => props.followUser(props.user.id)}>follow</div>
     )
   }
 }
