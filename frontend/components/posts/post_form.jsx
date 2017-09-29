@@ -125,7 +125,6 @@ class PostForm extends React.Component {
   }
 
   postForm(formType, edit) {
-    console.log(this.props);
 
     if (formType === "text") {
 

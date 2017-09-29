@@ -5,7 +5,6 @@ class UserShow extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
     this.followStatus = this.followStatus.bind(this);
   }
 

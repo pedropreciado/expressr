@@ -110,7 +110,6 @@ const handleClick = (event, post) => {
 
 
 const PostIndexItem = (props) => {
-  console.log(props);
   return (
     <div className="item-container">
 
