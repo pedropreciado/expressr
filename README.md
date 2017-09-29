@@ -10,7 +10,7 @@ expressr is a full stack web application built with Ruby on Rails, React and Red
 
 Users can upload images or write out their thoughts to be seen by their followers. expressr was inspired by minimally-designed websites such as Instagram, and Digg, where visual content is the main focus.
 
-![](https://raw.githubusercontent.com/pedropreciado/expressr/master/docs/screenshots/pug.png)
+![](https://raw.githubusercontent.com/pedropreciado/expressr/master/docs/screenshots/fallpup.png)
 
 Using the `react-modal` library, users can post content using a form that won't redirect from the page. Images are uploaded and retrieved from the cloud-based image management service, Cloudinary.
 
