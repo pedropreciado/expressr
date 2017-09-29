@@ -36,6 +36,10 @@ class UserShow extends React.Component {
     }
   }
 
+  handleClick(formType, flavor, post) {
+    this.setState({ formType, flavor, post })
+    this.openModel();
+  }
 
   render () {
     if (!this.props.user) {
@@ -75,6 +79,7 @@ class UserShow extends React.Component {
                 deletePost={this.props.deletePost}
                 updatePost={this.props.updatePost}
                 disabledOptions={true}
+
                 />
             ))
           }

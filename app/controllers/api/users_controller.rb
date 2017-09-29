@@ -3,7 +3,6 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @posts = User.find(params[:id]).posts
     @users = (User.includes(:posts).where.not(posts: {id: nil}) - [current_user] - [User.find_by(username: "guest")])
   end
 
