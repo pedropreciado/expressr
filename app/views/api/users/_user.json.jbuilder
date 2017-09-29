@@ -14,6 +14,8 @@ if post
   json.post do
     json.extract! post, :id, :content, :url, :author, :body, :title
     json.likes post.likes.count
+    json.current_user_likes !!post.likes.find_by(user_id: current_user.id)
+
   end
 end
 

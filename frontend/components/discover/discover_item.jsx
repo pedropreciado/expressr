@@ -48,7 +48,21 @@ const liker = (currentUserLikes) => {
   }
 }
 
+const likeCount = (post) => {
+  if (post.current_user_likes) {
+    return (
+      <a>{post.likes - 1} &#9825; + yours</a>
+    )
+  } else {
+    return (
+      <a>{post.likes} &#9825;</a>
+    )
+  }
+}
+
 const DiscoverItem = (props) => {
+
+  console.log(props);
 
   return (
     <div  className="discover-posts-container">
@@ -69,20 +83,10 @@ const DiscoverItem = (props) => {
       }
     </div>
     <div className="post-options-other">
-      <a>{props.user.post.likes} &#9825;</a>
+      <a>{likeCount(props.user.post)}</a>
     </div>
     </div>
   )
 }
 
 export default withRouter(DiscoverItem);
-
-
-// <div onClick={likeSetting} className="overlay">
-//   {liker(current_user_likes)}
-// </div>
-
-
-// <div onClick={likeSetting} className="overlay">
-//     {liker(current_user_likes)}
-//   </div>

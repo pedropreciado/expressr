@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 const options = (props) => {
 
-  if (props.post.author.id == props.currentUser.id) {
+  if (props.post.author.id == props.currentUser.id && !props.disabledOptions) {
     return (
       <div className="post-options-match">
         <a>{props.post.body}</a>
@@ -45,29 +45,48 @@ const postContent = (props) => {
   }
 
   if (props.post.content === "text") {
-
-    return (
-    <div className="content-container">
-      <div className="item-content-text">
-        {props.post.body}
-      </div>
-      <div onClick={likeSetting} className="overlay">
-        {likes(props.post.current_user_likes)}
-        </ div>
-    </ div>
-
-
-
-    )} else if (props.post.content === "img") {
+    if (props.disabledOptions) {
       return (
-    <div className="content-container">
-      <img className="post-img" src={props.post.url}/>
-      <div onClick={likeSetting} className="overlay">
-        {likes(props.post.current_user_likes)}
+        <div className="content-container">
+          <div className="item-content-text">
+            {props.post.body}
+          </div>
+
         </ div>
-    </ div>
-    )
+      )
+      } else {
+      return (
+      <div className="content-container">
+        <div className="item-content-text">
+          {props.post.body}
+        </div>
+        <div onClick={likeSetting} className="overlay">
+          {likes(props.post.current_user_likes)}
+          </ div>
+      </ div>
+    )}
+  } else if (props.post.content === "img") {
+
+      if (props.disabledOptions) {
+        return (
+          <div className="content-container">
+            <img className="post-img" src={props.post.url}/>
+            </ div>
+          )
+
+      } else {
+        return (
+          <div className="content-container">
+            <img className="post-img" src={props.post.url}/>
+            <div onClick={likeSetting} className="overlay">
+              {likes(props.post.current_user_likes)}
+              </ div>
+              </ div>
+            )
+
     }
+
+  }
   }
 
 const likes = (currentUserLikes) => {

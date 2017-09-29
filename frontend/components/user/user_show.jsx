@@ -72,6 +72,9 @@ class UserShow extends React.Component {
               <PostIndexItem
                 post={post}
                 currentUser={this.props.currentUser}
+                likePost={this.props.likePost}
+                unlikePost={this.props.unlikePost}
+                disabledOptions={true}
                 />
             ))
           }
