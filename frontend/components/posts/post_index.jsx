@@ -59,11 +59,6 @@ class PostIndex extends React.Component {
 
         <ul className="post-index">
 
-          <Link to="/discover">
-            <div id="discover-link">
-              discover more.
-            </div>
-          </Link>
 
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -92,6 +87,11 @@ class PostIndex extends React.Component {
                 />
             ))
           }
+          <Link to="/discover">
+            <div id="discover-link">
+              discover more.
+            </div>
+          </Link>
 
           <div className="new-posts-container">
             <div onClick={() => this.handleClick("text")} className="new-post-button"id="text">

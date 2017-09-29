@@ -88,7 +88,12 @@ const PostIndexItem = (props) => {
     <div className="item-container">
 
       <div className="item-header">
-      <Link to={`/users/${props.post.author.id}`}>{props.post.author.username}</ Link>
+      <Link to={`/users/${props.post.author.id}`} id="post-author">
+        <div >
+          {props.post.author.username}
+        </div>
+
+        </ Link>
         <a>{props.post.title}</a>
       </ div>
 

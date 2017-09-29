@@ -37,7 +37,7 @@ class UserShow extends React.Component {
     return (
       <div>
 
-        <ul>
+        <ul className="post-index">
           {
             posts.map((post) => (
               <PostIndexItem
@@ -46,8 +46,10 @@ class UserShow extends React.Component {
                 />
             ))
           }
+          <div id="discover-link" className="flipper">
+            {this.props.user.username}.
+          </div>
         </ul>
-
       </div>
     )
   }
