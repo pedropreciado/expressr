@@ -81,7 +81,7 @@ li.errors {
   color: white;
   transition: .3s;
   padding: 5px;
-
+  cursor: pointer;
 }
 
 #home-link {
@@ -202,7 +202,17 @@ div.submit-buttons {
   font-size: 15px;
   font-weight: 100;
   color: rgb(33, 33, 33);
+  text-decoration: none;
+  height: 100%;
 }
+
+.logo-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
 
 
 form {
@@ -531,8 +541,12 @@ textarea {
 
 #post-author:hover {
   background-color: rgb(33, 33, 33);
-  font-size: 25px;
   color: white;
   transition: .3s;
   padding: 5px;
+}
+
+#home {
+  font-size: 8px;
+  color: white;
 }

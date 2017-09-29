@@ -1,17 +1,33 @@
 import React from "react";
 import PostIndexItem from "../posts/post_index_item";
-
+import { Link } from "react-router-dom";
 class UserShow extends React.Component {
 
   constructor(props) {
     super(props);
 
-
+    this.followStatus = this.followStatus.bind(this);
   }
 
 
   componentWillMount() {
     this.props.fetchUser(this.props.match.params.userId);
+  }
+
+  followStatus(props) {
+    if (props.user.followers.includes(props.currentUser.id)) {
+      return (
+        <div onClick={() => props.unfollowUser(props.user.id)} id="discover-link">
+          unfollow {props.user.username}.
+        </div>
+      )
+    } else {
+      return (
+        <div onClick={() => props.followUser(props.user.id)} id="discover-link">
+          follow {props.user.username}.
+        </div>
+      )
+    }
   }
 
 
@@ -38,6 +54,12 @@ class UserShow extends React.Component {
       <div>
 
         <ul className="post-index">
+          <Link to="/posts" >
+            <div id="home-link">
+              return home.
+            </div>
+          </Link>
+
           {
             posts.map((post) => (
               <PostIndexItem
@@ -46,9 +68,7 @@ class UserShow extends React.Component {
                 />
             ))
           }
-          <div id="discover-link" className="flipper">
-            {this.props.user.username}.
-          </div>
+            {this.followStatus(this.props)}
         </ul>
       </div>
     )

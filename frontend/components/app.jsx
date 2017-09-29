@@ -16,13 +16,16 @@ import UserShowContainer from "./user/user_show_container";
 const App = () => (
   <div>
     <header className="nav-header">
-      <h3>
-      <Link to="/posts">
+      <Link to="/" className="logo">
+      <div className="logo-container">
         <button className="logo">
-          expressr
-          </ button>
-      </Link>
-    </h3>
+          expressr.
+        <br />
+          <p id="home">click to go home</p>
+        </button>
+      </div>
+      </ Link>
+
       <NavBarContainer />
     </header>
     <Switch>
@@ -30,6 +33,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route exact path="/users/:userId" component={UserShowContainer}/>
       <ProtectedRoute path="/discover" component={DiscoverContainer}/>
+      <ProtectedRoute path="/users/:userId" component={UserShowContainer}/>
       <Switch>
         <ProtectedRoute path="/" component={PostIndexContainer}/>
         <Route exact path="/" component={SessionFormContainer} />

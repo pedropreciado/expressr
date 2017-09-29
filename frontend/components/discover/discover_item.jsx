@@ -54,7 +54,9 @@ const DiscoverItem = (props) => {
     <div  className="discover-posts-container">
 
       <div className="discover-item-header">
+        <Link to={`users/${props.user.id}`} id="post-author">
         <a>{`${props.user.username}`}</a>
+        </Link>
         {followStatus(props)}
       </ div>
     <div>
