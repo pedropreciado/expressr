@@ -62,7 +62,6 @@ const likeCount = (post) => {
 
 const DiscoverItem = (props) => {
 
-  console.log(props);
 
   return (
     <div  className="discover-posts-container">

@@ -43,7 +43,6 @@ class UserShow extends React.Component {
       return <div>loading...</div>
     }
 
-    console.log(this.props);
     let author = this.props.user;
     let posts = this.props.user.posts.map((post) => {
           return {
