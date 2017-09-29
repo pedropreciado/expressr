@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 
 const options = (props) => {
 
-
   if (props.post.author.id == props.currentUser.id) {
     return (
       <div className="post-options-match">
@@ -84,11 +83,12 @@ const likes = (currentUserLikes) => {
 }
 
 const PostIndexItem = (props) => {
+
   return (
     <div className="item-container">
 
       <div className="item-header">
-        <a>{props.post.author.username}</a>
+      <Link to={`/users/${props.post.author.id}`}>{props.post.author.username}</ Link>
         <a>{props.post.title}</a>
       </ div>
 

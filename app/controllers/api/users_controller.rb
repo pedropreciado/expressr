@@ -3,11 +3,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = (User.includes(:posts).where.not(posts: {id: nil}) - [current_user] - [User.find_by(username: "guest")]) 
+    @users = (User.includes(:posts).where.not(posts: {id: nil}) - [current_user] - [User.find_by(username: "guest")])
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def create

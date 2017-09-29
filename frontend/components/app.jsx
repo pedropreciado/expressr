@@ -11,6 +11,7 @@ import Splash from "./splash_page/splash";
 import PostIndexContainer from "./posts/post_index_container";
 import PostForm from "./posts/post_form";
 import DiscoverContainer from "./discover/discover_container";
+import UserShowContainer from "./user/user_show_container";
 
 const App = () => (
   <div>
@@ -27,6 +28,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <Route exact path="/users/:userId" component={UserShowContainer}/>
       <ProtectedRoute path="/discover" component={DiscoverContainer}/>
       <Switch>
         <ProtectedRoute path="/" component={PostIndexContainer}/>

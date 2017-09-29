@@ -1,4 +1,12 @@
-json.extract! user, :id, :username, :followed_users
+json.extract! user, :id, :username, :followed_users, :posts
+
+posts = user.posts
+
+# posts.each do |post|
+#   json.set!(post.id) do
+#     json.extract! post, :id, :content, :url, :author, :body, :title
+#   end
+# end
 
 post = user.posts.sample(1)[0]
 
