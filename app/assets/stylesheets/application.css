@@ -1,4 +1,4 @@
-/*
+w/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -23,15 +23,19 @@ light-trail:
 */
 
 html {
-   box-sizing: border-box;
    color: rgb(33, 33, 33);
    background-color: white;
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   -webkit-background-size: cover;
-   background-size: cover;
-   height: 100%;
+   min-height: 100vh;
+}
+
+/*.main-page {
+  height: 100vh;*/
+/*}*/
+
+[data-reactroot] {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h3 {
@@ -101,12 +105,8 @@ footer {
   align-items: baseline;
   font-size: 15px;
   font-weight: 500;
-  bottom: 0;
-  left: 0;
   border-top: .5px solid white;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  position: static;
 }
 
 button {
@@ -217,14 +217,46 @@ div.submit-buttons {
   height: 50px;
 }
 
+#home {
+  font-size: 8px;
+  color: white;
+}
 
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  height: 120px;
+}
+
+.about-container:hover {
+  cursor: pointer;
+  background-color: rgb(33, 33, 33);
+  color: white;
+  border-radius: 0;
+  transition: .3s;
+}
+
+#about-head {
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+}
+
+#summary {
+  font-size: 20px;
+  color: white;
+  font-weight: 100;
+  margin: 0;
+  }
 
 form {
   display: flex;
   flex-flow: column;
-  align-content: space-between;
   margin: 0 auto;
-  margin-top: 10%;
+
   margin-bottom: 5px;
   width: 40%;
   box-sizing: border-box;
@@ -238,10 +270,11 @@ form {
   padding: 10px;
 }
 
+
 div.auth-page {
   display: flex;
-  justify-content: space-between;
-  transition: 2s;
+  flex-flow: column;
+  height: 89vh;
 }
 
 ul.post-index, ul.user-index{
@@ -323,12 +356,13 @@ input {
 }
 
 .footer-link:hover {
-  border-bottom: .2px solid white;
+  background-color: rgb(33, 33, 33);
+  color: white;
 }
 
 .footer-link {
   text-decoration: none;
-  color: white;
+  color: rgb(33, 33, 33);
   padding: 5px;
   height: 20px;
 }
@@ -549,9 +583,4 @@ textarea {
   color: white;
   transition: .3s;
   padding: 5px;
-}
-
-#home {
-  font-size: 8px;
-  color: white;
 }

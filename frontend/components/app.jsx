@@ -28,6 +28,7 @@ const App = () => (
 
       <NavBarContainer />
     </header>
+    <div className='main-page'>
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
@@ -39,12 +40,10 @@ const App = () => (
         <Route exact path="/" component={SessionFormContainer} />
       </ Switch>
     </ Switch>
+    </ div>
+    <Footer />
   </div>
 
 );
 
 export default App;
-
-
-// <Footer />
-// ADD FOOTER!!

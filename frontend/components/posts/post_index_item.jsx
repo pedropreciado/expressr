@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 const options = (props) => {
 
-  if (props.post.author.id == props.currentUser.id) {
+  if (props.post.author.id == props.currentUser.id && !props.disabledOptions) {
     return (
       <div className="post-options-match">
         <a>{props.post.body}</a>
@@ -16,13 +16,24 @@ const options = (props) => {
       </div>
     )
   } else {
-    return (
-    <div className="post-options-other">
-      <a>{props.post.body}</a>
-      {likeCount(props.post)}
-      <div onClick={() => props.handleClick(props.post.content, "reblog", props.post)}  className="update-button" id="edit">reblog</ div>
-    </div>
-  )
+    if (!props.disabledOptions) {
+      return (
+      <div className="post-options-other">
+        <a>{props.post.body}</a>
+        {likeCount(props.post)}
+        <div onClick={() => props.handleClick(props.post.content, "reblog", props.post)}  className="update-button" id="edit">reblog</ div>
+        </div>
+      )
+    } else {
+      return (
+      <div className="post-options-other">
+        <a>{props.post.body}</a>
+        {likeCount(props.post)}
+        </div>
+      )
+    }
+
+
   }
   closeModal;
 }
