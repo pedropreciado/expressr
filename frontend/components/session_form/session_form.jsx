@@ -22,9 +22,9 @@ class SessionForm extends React.Component {
     }
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   this.setState({errors: [newProps.errors]})
-  // }
+  componentWillReceiveProps(newProps) {
+    this.setState({errors: [newProps.errors]})
+  }
 
   componentDidMount() {
     this.props.clearSessionErrors();

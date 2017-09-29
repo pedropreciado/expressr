@@ -108,6 +108,7 @@ class PostForm extends React.Component {
 
   dropzoneContent() {
     if (this.state.uploadedFileCloudinaryUrl === '') {
+
       return (
         <p> drop an image or click to select a file to upload.</ p>
       )} else {

@@ -6,7 +6,9 @@ export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
 export const login = (user) => dispatch => (
   SessionApiUtil.login(user).then((user) => dispatch(receiveCurrentUser(user)),
-                                  (err) => dispatch(receiveErrors(err.responseJSON)))
+                                  (err) => (
+                                    dispatch(receiveErrors(err.responseJSON))
+                                ))
 )
 
 export const logout = () => dispatch => (
@@ -15,7 +17,9 @@ export const logout = () => dispatch => (
 
 export const signup = (user) => dispatch => (
   SessionApiUtil.signup(user).then((user) => dispatch(receiveCurrentUser(user)),
-                                    (err) => (dispatch(receiveErrors(err.responseJSON))))
+                                    (err) => (
+                                      dispatch(receiveErrors(err.responseJSON))
+                                    ))
 )
 
 const receiveCurrentUser = (currentUser) => ({
