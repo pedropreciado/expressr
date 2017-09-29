@@ -38,7 +38,12 @@ class PostForm extends React.Component {
     event.preventDefault();
 
     if (this.props.oldPost) {
-      this.props.updatePost(this.state.post).then(() => this.props.history.push("/posts"))
+      if (this.props.flavor === "reblog") {
+        this.props.oldPost.author = this.props.currentUser;
+        this.props.createPost(this.props.oldPost).then(this.props.updatePost(this.props.oldPost).then(() => this.props.history.push("/posts")))
+      } else {
+        this.props.updatePost(this.state.post).then(() => this.props.history.push("/posts"))
+      }
     } else {
       this.props.createPost(this.state.post).then(() => this.props.history.push("/posts"))
     }
@@ -91,9 +96,10 @@ class PostForm extends React.Component {
     });
   }
 
-  formHeader(edit, formType) {
+  formHeader(flavor, formType) {
     formType === "img" ? formType = "image fields" : formType = "title and body"
-    if (edit) {
+
+    if (flavor === "edit") {
       return (
         <h2 id="form-header">edit {formType}.</h2>
 
@@ -119,7 +125,7 @@ class PostForm extends React.Component {
   }
 
   postForm(formType, edit) {
-
+    console.log(this.props);
 
     if (formType === "text") {
 
@@ -188,7 +194,7 @@ class PostForm extends React.Component {
   render() {
     return (
       <div>
-      {this.postForm(this.props.formType, this.props.edit)}
+      {this.postForm(this.props.formType, this.props.flavor)}
     </div>
     )
   }

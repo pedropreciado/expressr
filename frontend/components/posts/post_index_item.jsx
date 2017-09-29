@@ -9,8 +9,9 @@ const options = (props) => {
         <a>{props.post.body}</a>
         {likeCount(props.post)}
         <div id="edit-delete">
-          <div onClick={() => props.handleClick(props.post.content, true, props.post)}  className="update-button" id="edit">edit</ div>
-          <div onClick={() => props.deletePost(props.post.id)} className="update-button" id="delete">delete</div>
+          <div onClick={() => props.handleClick(props.post.content, "reblog", props.post)}  className="update-button" id="edit">reblog</ div>
+          <div onClick={() => props.handleClick(props.post.content, "edit", props.post)}  className="update-button" id="edit">edit</ div>
+          <div onClick={() => props.deletePost(props.post.id, "delete")} className="update-button" id="delete">delete</div>
         </div>
       </div>
     )
@@ -19,6 +20,7 @@ const options = (props) => {
     <div className="post-options-other">
       <a>{props.post.body}</a>
       {likeCount(props.post)}
+      <div onClick={() => props.handleClick(props.post.content, "reblog", props.post)}  className="update-button" id="edit">reblog</ div>
     </div>
   )
   }
@@ -101,8 +103,14 @@ const likes = (currentUserLikes) => {
   }
 }
 
-const PostIndexItem = (props) => {
+const handleClick = (event, post) => {
+  event.preventDefault();
 
+
+}
+
+
+const PostIndexItem = (props) => {
   return (
     <div className="item-container">
 
@@ -117,7 +125,6 @@ const PostIndexItem = (props) => {
       </ div>
 
         {postContent(props)}
-
         {options(props)}
     </div>
   )

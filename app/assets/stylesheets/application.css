@@ -464,18 +464,18 @@ img.submitted-photo {
 }
 
 #edit-delete {
-  padding: 0;
   display: flex;
-  width: 15%;
-  justify-content: space-around;
+      justify-content: space-around;
+      margin-bottom: 0.5px;
 }
 
 .update-button {
-  display: inline-block;
-  color: rgb(33, 33, 33);
-  text-decoration: none;
-  padding: 1px;
-  cursor: pointer;
+  font-size: 15px;
+    display: inline-block;
+    color: rgb(33, 33, 33);
+    text-decoration: none;
+    padding: 3px;
+    cursor: pointer;
 }
 
 #delete.update-button:hover {

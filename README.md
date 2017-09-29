@@ -2,7 +2,7 @@
 
 [expressr on Heroku](https://expressr.herokuapp.com/)
 
-expressr is a full stack web application built with Ruby on Rails, React and Redux, and uses a PostgreSQL database. expressr was influenced by the social networking site Tumblr, and draws inspiration from sites that focus on user content. expressr features a minimal, distraction-free design, allowing users to focus on the content shared by others. Users can post their self expressions by text, or photo. Users can also follow other users, and like their posts.
+expressr is a full stack web application built with Ruby on Rails, React and Redux, and uses a PostgreSQL database. expressr was influenced by the social networking site Tumblr, and draws inspiration from social media sites that focus on user content. expressr features a minimal, distraction-free design, allowing users to focus on posts shared by others. Users can post their self expressions by text, or photo. Users can also follow other users, and like their posts.
 
 ## Features and Implementation
 

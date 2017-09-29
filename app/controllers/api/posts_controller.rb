@@ -26,7 +26,7 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       render :index
     else
