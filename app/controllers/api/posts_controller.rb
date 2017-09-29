@@ -1,4 +1,4 @@
-wclass Api::PostsController < ApplicationController
+class Api::PostsController < ApplicationController
   def new
     render :new
   end
