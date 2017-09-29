@@ -15,6 +15,13 @@ class UserShow extends React.Component {
   }
 
   followStatus(props) {
+    if (props.user.id === props.currentUser.id) {
+      return (
+        <div id="discover-link" className="flipper">
+          hello {props.user.username}.
+        </div>
+      )
+    }
     if (props.user.followers.includes(props.currentUser.id)) {
       return (
         <div onClick={() => props.unfollowUser(props.user.id)} id="discover-link">
