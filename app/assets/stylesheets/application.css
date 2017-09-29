@@ -34,12 +34,16 @@ html {
    height: 100%;
 }
 
-h3.currentUser {
-  font-weight: 100;
-  color: rgb(33, 33, 33);
-  width: 100%;
+h3 {
   text-align: center;
 }
+
+#currentUser:hover {
+  color: white;
+  background-color: rgb(33, 33, 33);
+  transition: .3s;
+}
+
 
 div.splash-link-container {
   color: white;

@@ -5,7 +5,11 @@ import { Link, withRouter } from "react-router-dom";
 const displayName = (currentUser, logout) => (
 
       <navGroup className="nav-group">
-        <h3 className="currentUser">{currentUser.username}</h3>
+        <h3>
+          <Link to={`/users/${currentUser.id}`} className="logo" id="currentUser">
+          {currentUser.username}
+        </Link>
+        </h3>
         <button onClick={logout}>logout</button>
       </navGroup>
 )
