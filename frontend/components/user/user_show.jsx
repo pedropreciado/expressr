@@ -5,12 +5,12 @@ class UserShow extends React.Component {
 
   constructor(props) {
     super(props);
-
+    console.log(props);
     this.followStatus = this.followStatus.bind(this);
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
   }
 
@@ -42,19 +42,19 @@ class UserShow extends React.Component {
     if (!this.props.user) {
       return <div>loading...</div>
     }
-
-    let author = this.props.user;
-    let posts = this.props.user.posts.map((post) => {
-          return {
-          author,
-          id: post.id,
-          content: post.content,
-          url: post.url,
-          title: post.title,
-          body: post.body
-        }
-
-    })
+    //
+    // let author = this.props.user;
+    // let posts = this.props.user.posts.map((post) => {
+    //       return {
+    //       author,
+    //       id: post.id,
+    //       content: post.content,
+    //       url: post.url,
+    //       title: post.title,
+    //       body: post.body
+    //     }
+    //
+    // })
 
     return (
       <div>
@@ -67,12 +67,14 @@ class UserShow extends React.Component {
           </Link>
 
           {
-            posts.map((post) => (
+            this.props.user.posts.map((post) => (
               <PostIndexItem
                 post={post}
                 currentUser={this.props.currentUser}
                 likePost={this.props.likePost}
                 unlikePost={this.props.unlikePost}
+                deletePost={this.props.deletePost}
+                updatePost={this.props.updatePost}
                 disabledOptions={true}
                 />
             ))

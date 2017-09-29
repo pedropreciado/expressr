@@ -20,7 +20,6 @@ const options = (props) => {
     <div className="post-options-other">
       <a>{props.post.body}</a>
       {likeCount(props.post)}
-      <div onClick={() => props.handleClick(props.post.content, "reblog", props.post)}  className="update-button" id="edit">reblog</ div>
     </div>
   )
   }
@@ -111,6 +110,7 @@ const handleClick = (event, post) => {
 
 
 const PostIndexItem = (props) => {
+  console.log(props);
   return (
     <div className="item-container">
 
