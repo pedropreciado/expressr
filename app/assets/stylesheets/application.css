@@ -441,6 +441,7 @@ img.submitted-photo {
   position: relative;
   width: 100%;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   height: 100%;

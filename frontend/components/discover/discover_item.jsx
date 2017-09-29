@@ -12,13 +12,14 @@ const postContent = (post, likePost, unlikePost, current_user_likes, likes) => {
 
     return (
     <div className="discover-content-container">
-        {post.body}
+        {`${post.title} | ${post.body}`}
     </ div>
 
   )} else if (post.content === "img") {
       return (
     <div className="discover-content-container">
       <img className="discover-post-img" src={post.url}/>
+      <p>{post.body}</p>
     </ div>
     )
   }
