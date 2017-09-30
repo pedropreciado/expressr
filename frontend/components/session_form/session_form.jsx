@@ -96,13 +96,13 @@ class SessionForm extends React.Component {
             <p id="about-head">about expressr.</ p>
           <br />
             <p id="summary">expressr is a way to express yourself through different forms of content.</p>
-            
+
           </div>
         </div>
         <form onSubmit={this.handleSubmit}>
 
           <h1 id="form-title">expressr.</h1>
-          <h3>{this.props.formType} to begin exploring.</h3>
+          <h3>{this.props.formType}</h3>
 
           {this.errors()}
 
